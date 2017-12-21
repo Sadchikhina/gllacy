@@ -28,7 +28,78 @@
         <span class="telephone" aria-label="Телефон">8 812 450-25-25</span>
       </div>
     </header>
+    <main class="catalog-main">
+      <header class="catalog-main-header">
+        <ul class="breadscrumbs-menu">
+          <li><a class="to-main" href="index.html">Главная</a></li>
+          <li><a class="to-catalog" href="catalog.html">Каталог</a></li>
+          <li class="current">Сливочное</li>
+        </ul>
+      </header>
+      <h1>Сливочное мороженое</h1>
+      <section class="filters">
+        <form class="filter" action="#" method="post">
+          <div class="popularity">
+            <label class="filter-label">Сортировка:</label>
+            <input type="radio" name="popularity-sort" id="popularity" value="по популярности">
+            <label for="popularity">по популярности</label>
+          </div>
+          <div class="price">
+            <label class="filter-label">Цена: 100 р. - 500 р.</label>
+            <div class="range-line" tabindex="0"></div>
+            <div class="left-handle" tabindex="0"></div>
+            <div class="right-handle" tabindex="0"></div>
+          </div>
+          <div class="fatness">
+            <label class="filter-label">Жирность:</label>
+            <p>
+              <input type="radio" name="fatness-sort" id="zero-fat" value="0%">
+              <label for="zero-fat">0%</label>
+            </p>
+            <p>
+              <input type="radio" name="fatness-sort" id="ten-fat" value="10%" checked>
+              <label for="zero-fat">10%</label>
+            </p>
+            <p>
+              <input type="radio" name="fatness-sort" id="under-thirty-fat" value="до 30%">
+              <label for="zero-fat">до 30%</label>
+            </p>
+            <p>
+              <input type="radio" name="fatness-sort" id="above-thirty-fat" value="выше 30%">
+              <label for="zero-fat">выше 30%</label>
+            </p>
+          </div>
+          <div class="fillers">
+            <label class="filter-label">Наполнители:</label>
+            <p>
+              <input type="checkbox" name="chocolate-fill" id="chocolate" checked>
+              <label for="chocolate">шоколадные</label>
+            </p>
+            <p>
+              <input type="checkbox" name="sugar-fill" id="sugar" checked>
+              <label for="sugar">сахарные присыпки</label>
+            </p>
+            <p>
+              <input type="checkbox" name="fruit-fill" id="fruit">
+              <label for="fruit">фрукты</label>
+            </p>
+            <p>
+              <input type="checkbox" name="syrop-fill" id="syrop">
+              <label for="syrop">сиропы</label>
+            </p>
+            <p>
+              <input type="checkbox" name="jam-fill" id="jam">
+              <label for="jam">джемы</label>
+            </p>
+          </div>
+          <button class="filter-button" type="submit" name="apply">Применить</button>
+        </form>
+      </section>
+      <section class="catalog">
 
+      </section>
+
+    </main>
     <footer class="catalog-footer">
       <ul class="social-list">
         <li class="social-twitter"></li>
