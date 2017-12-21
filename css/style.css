@@ -1,11 +1,39 @@
 body {
-  min-width: 1200px;
+  min-width: 1400px;
   background-color: #849d8f;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
   color: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.slide2,
+.slide3 {
+  display: none;
+}
+
+.main-header,
+.slider,
+.index-main,
+.index-footer {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cite-navigation,
+.user-navigation,
+.social-list {
+  list-style-type: none;
 }
 
 .add-button,
@@ -15,15 +43,26 @@ body {
   color: #ffffff;
 }
 
+.main-navigation {
+  display: flex;
+}
 
 .cite-navigation {
+  display: flex;
   line-height: 18px;
 }
 
 .user-navigation {
+  display: flex;
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
+}
+
+.time-contact {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1000px;
 }
 
 .work-hours {
@@ -36,7 +75,11 @@ body {
   line-height: 24px;
 }
 
-.slide-text p {
+.slider {
+  text-align: center;
+}
+
+.slider p {
   font-size: 60px;
   line-height: 60.35px;
 }
@@ -44,6 +87,10 @@ body {
 .slider .add-button {
   font-size: 32px;
   line-height: 44px;
+}
+
+.offers {
+  display: flex;
 }
 
 .offers h3 {
@@ -58,6 +105,10 @@ body {
 .add-bonus {
   font-size: 18px;
   line-height: 24px;
+}
+
+.hit-catalog {
+  display: flex;
 }
 
 .hit-item b {
