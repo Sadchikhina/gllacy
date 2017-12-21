@@ -1,0 +1,125 @@
+body {
+  min-width: 1200px;
+  background-color: #849d8f;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.add-button,
+.add-bonus,
+.send-button,
+.filter-button {
+  color: #ffffff;
+}
+
+
+.cite-navigation {
+  line-height: 18px;
+}
+
+.user-navigation {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.work-hours {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.telephone {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.slide-text p {
+  font-size: 60px;
+  line-height: 60.35px;
+}
+
+.slider .add-button {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.offers h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.offers p {
+  font-size: 18px;
+}
+
+.add-bonus {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.hit-item b {
+  font-size: 32px;
+}
+
+.kilo {
+  position: relative;
+  font-size: 16px;
+  padding-left: 32px;
+}
+
+.kilo::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/ruble.svg");
+  background-repeat: no-repeat;
+  top: -10px;
+  left: 0;
+}
+
+.hit-item p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-us h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.about-us p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.news h4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.news p {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.subscription p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.adress h5,
+.adress span {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.index-footer {
+  font-size: 14px;
+  font-weight: 400;
+}
