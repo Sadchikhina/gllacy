@@ -1,5 +1,5 @@
 body {
-  min-width: 1400px;
+  min-width: 1200px;
   background-color: #849d8f;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
@@ -16,17 +16,12 @@ body {
   margin: -1px;
 }
 
-.slide2,
-.slide3 {
-  display: none;
-}
-
 .main-header,
 .slider,
 .index-main,
 .catalog-main,
 .index-footer {
-  width: 1200px;
+  width: 1160px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -48,6 +43,7 @@ body {
 
 .main-navigation {
   display: flex;
+  padding-top: 10px;
 }
 
 .cite-navigation {
@@ -62,10 +58,16 @@ body {
   font-weight: 500;
 }
 
+.slider {
+  position: relative;
+  height: 575px;
+}
+
 .time-contact {
   display: flex;
   flex-direction: column;
-  margin-left: 1000px;
+  margin-left: 950px;
+  margin-bottom: 250px;
 }
 
 .work-hours {
@@ -76,6 +78,31 @@ body {
 .telephone {
   font-size: 22px;
   line-height: 24px;
+}
+
+.slide1 {
+  position: absolute;
+  width: 1200px;
+  height: 575px;
+  background-image: url("../img/ice-cream1.png"),
+                    url("../img/ice-cream2.png");
+  background-repeat: no-repeat;
+  background-position: 250px 10px,
+                       565px 53px;
+}
+
+.slide2 {
+  position: relative;
+  width: 1200px;
+  height: 575px;
+  visibility: hidden;
+}
+
+.slide3 {
+  position: relative;
+  width: 1200px;
+  height: 575px;
+  visibility: hidden;
 }
 
 .slider {
@@ -94,6 +121,9 @@ body {
 
 .offers {
   display: flex;
+  background-image: url("../img/ice-cream1.png");
+  background-repeat: no-repeat;
+  background-position: 250px -565px;
 }
 
 .offers h3 {
@@ -103,6 +133,22 @@ body {
 
 .offers p {
   font-size: 18px;
+}
+
+.raspberry-bonus {
+  width: 830px;
+  height: 230px;
+  padding: 20px;
+  background-image: url("../img/raspberry-background.png");
+  background-repeat: no-repeat;
+}
+
+.chocolate-bonus {
+  width: 830px;
+  height: 230px;
+  padding: 20px;
+  background-image: url("../img/chocolate-background.png");
+  background-repeat: no-repeat;
 }
 
 .add-bonus {
