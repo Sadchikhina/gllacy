@@ -21,7 +21,7 @@ body {
 .index-main,
 .catalog-main,
 .index-footer {
-  width: 1160px;
+  width: 1146px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -83,7 +83,7 @@ body {
 
 .slide1 {
   position: absolute;
-  width: 1200px;
+  width: 1146px;
   height: 574px;
   background-image: url("../img/ice-cream1.png"),
                     url("../img/ice-cream2.png");
@@ -94,18 +94,17 @@ body {
 
 .slide2 {
   position: relative;
-  width: 1200px;
+  width: 1146px;
   height: 574px;
   visibility: hidden;
 }
 
 .slide3 {
   position: relative;
-  width: 1200px;
+  width: 1146px;
   height: 574px;
   visibility: hidden;
 }
-
 
 .slider p {
   font-size: 60px;
@@ -142,7 +141,7 @@ body {
   width: 830px;
   height: 230px;
   margin: 0;
-  margin-right: 10px;
+  margin-right: 25px;
   padding-top: 16px;
   padding-left: 19px;
   padding-right: 22px;
@@ -172,6 +171,7 @@ body {
   justify-content: space-between;
   width: 1146px;
   height: 322px;
+  margin-bottom: 40px;
 }
 
 .hit-item {
@@ -233,14 +233,99 @@ body {
   color: #323232;
 }
 
+.about-us {
+  box-sizing: border-box;
+  width: 1146px;
+  height: 310px;
+  background-image: url("../img/waffle-background.png");
+  background-repeat: no-repeat;
+}
+
 .about-us h2 {
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
+  padding-top: 25px;
+  padding-left: 19px;
+  margin: 0;
+  margin-bottom: 21px;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .about-us p {
+  box-sizing: border-box;
+  width: 560px;
   font-weight: 400;
+  margin: 0;
+  margin-bottom: 23px;
+}
+
+.production-fact {
+  position: relative;
+  padding-left: 75px;
+}
+
+.production-fact::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/ice-cream.svg");
+  background-repeat: no-repeat;
+  top: -13px;
+  left: 20px;
+}
+
+.ingredient-fact {
+  position: relative;
+  padding-left: 83px;
+}
+
+.ingredient-fact::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/cow.svg");
+  background-repeat: no-repeat;
+  top: -13px;
+  left: 25px;
+}
+
+.milk-fact {
+  position: relative;
+  padding-left: 75px;
+}
+
+.milk-fact::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/eco.svg");
+  background-repeat: no-repeat;
+  top: -13px;
+  left: 20px;
+}
+
+.delivery-fact {
+  position: relative;
+  padding-left: 83px;
+}
+
+.delivery-fact::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/thermometer.svg");
+  background-repeat: no-repeat;
+  top: -13px;
+  left: 25px;
 }
 
 .news h4 {
