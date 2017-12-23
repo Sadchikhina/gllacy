@@ -122,6 +122,7 @@ body {
   background-image: url("../img/ice-cream1.png");
   background-repeat: no-repeat;
   background-position: 250px -565px;
+  margin-bottom: 39px;
 }
 
 .offers h3 {
@@ -168,30 +169,50 @@ body {
 
 .hit-catalog {
   display: flex;
+  justify-content: space-between;
+  width: 1146px;
+  height: 322px;
 }
 
-.hit-item b,
+.hit-item {
+  padding: 0;
+  margin: 0;
+  width: 267px;
+  position: relative;
+}
+
+.hit-item-pic {
+  position: absolute;
+}
+
+.hit-item-text {
+  position: absolute;
+  top: 220px;
+}
+
+.hit-item-text p {
+    text-align: center;
+    margin-top: 27px;
+}
+
+.hit-item-text b,
 .catalog-item b {
-  font-size: 32px;
+  font-size: 45px;
+  text-shadow: 1px 1px 1px #323232;
+}
+
+.ruble {
+  font-size: 44px;
+  padding-left: 3px;
+  padding-right: 1px;
+
 }
 
 .kilo {
-  position: relative;
-  padding-left: 32px;
+  font-size: 32px;
 }
 
-.kilo::before {
-  content: "";
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background-image: url("../img/ruble.svg");
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-}
-
-.hit-item p,
+.hit-item-text p,
 .catalog-item p {
   font-weight: 500;
 }
