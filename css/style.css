@@ -60,7 +60,8 @@ body {
 
 .slider {
   position: relative;
-  height: 575px;
+  height: 574px;
+  text-align: center;
 }
 
 .time-contact {
@@ -83,7 +84,7 @@ body {
 .slide1 {
   position: absolute;
   width: 1200px;
-  height: 575px;
+  height: 574px;
   background-image: url("../img/ice-cream1.png"),
                     url("../img/ice-cream2.png");
   background-repeat: no-repeat;
@@ -94,20 +95,17 @@ body {
 .slide2 {
   position: relative;
   width: 1200px;
-  height: 575px;
+  height: 574px;
   visibility: hidden;
 }
 
 .slide3 {
   position: relative;
   width: 1200px;
-  height: 575px;
+  height: 574px;
   visibility: hidden;
 }
 
-.slider {
-  text-align: center;
-}
 
 .slider p {
   font-size: 60px;
@@ -127,26 +125,38 @@ body {
 }
 
 .offers h3 {
-  font-size: 24px;
-  line-height: 30px;
+  margin: 0;
+  font-size: 35px;
+  line-height: 41px;
+  margin-bottom: 15px;
 }
 
 .offers p {
+  margin: 0;
   font-size: 18px;
 }
 
 .raspberry-bonus {
+  box-sizing: border-box;
   width: 830px;
   height: 230px;
-  padding: 20px;
+  margin: 0;
+  margin-right: 10px;
+  padding-top: 16px;
+  padding-left: 19px;
+  padding-right: 22px;
   background-image: url("../img/raspberry-background.png");
   background-repeat: no-repeat;
 }
 
 .chocolate-bonus {
+  box-sizing: border-box;
   width: 830px;
   height: 230px;
-  padding: 20px;
+  margin: 0;
+  padding-top: 16px;
+  padding-left: 19px;
+  padding-right: 22px;
   background-image: url("../img/chocolate-background.png");
   background-repeat: no-repeat;
 }
@@ -184,6 +194,12 @@ body {
 .hit-item p,
 .catalog-item p {
   font-weight: 500;
+}
+
+.about-us,
+.main-index-footer,
+.adress {
+  color: #323232;
 }
 
 .about-us h2 {
