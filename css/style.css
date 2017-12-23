@@ -181,6 +181,17 @@ body {
   position: relative;
 }
 
+.hit-item::before {
+  content: "";
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  background-image: url("../img/hit.svg");
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .hit-item-pic {
   position: absolute;
 }
@@ -205,7 +216,6 @@ body {
   font-size: 44px;
   padding-left: 3px;
   padding-right: 1px;
-
 }
 
 .kilo {
