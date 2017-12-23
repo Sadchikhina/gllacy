@@ -118,6 +118,7 @@ body {
 
 .offers {
   display: flex;
+  justify-content: space-between;
   background-image: url("../img/ice-cream1.png");
   background-repeat: no-repeat;
   background-position: 250px -565px;
@@ -138,10 +139,9 @@ body {
 
 .raspberry-bonus {
   box-sizing: border-box;
-  width: 830px;
+  width: 560px;
   height: 230px;
   margin: 0;
-  margin-right: 25px;
   padding-top: 16px;
   padding-left: 19px;
   padding-right: 22px;
@@ -151,7 +151,7 @@ body {
 
 .chocolate-bonus {
   box-sizing: border-box;
-  width: 830px;
+  width: 560px;
   height: 230px;
   margin: 0;
   padding-top: 16px;
@@ -229,6 +229,7 @@ body {
 
 .about-us,
 .main-index-footer,
+.news a,
 .adress {
   color: #323232;
 }
@@ -239,6 +240,7 @@ body {
   height: 310px;
   background-image: url("../img/waffle-background.png");
   background-repeat: no-repeat;
+  margin-bottom: 36px;
 }
 
 .about-us h2 {
@@ -328,16 +330,59 @@ body {
   left: 25px;
 }
 
+.main-index-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news {
+  box-sizing: border-box;
+  width: 560px;
+  height: 230px;
+  margin: 0;
+  padding: 0;
+  padding-top: 23px;
+  padding-left: 19px;
+  padding-right: 22px;
+  background-image: url("../img/strawberry-background.png");
+  background-repeat: no-repeat;
+}
+
 .news h4 {
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3px;
 }
 
-.news p {
+.news a {
   font-size: 24px;
   line-height: 30px;
+
 }
 
-.subscription p {
+.subscription {
+  box-sizing: border-box;
+  width: 560px;
+  height: 230px;
+  margin: 0;
+  background-image: url("../img/post-background.png");
+  background-repeat: no-repeat;
+}
+
+.subscription-form {
+  box-sizing: border-box;
+  width: 550px;
+  height: 210px;
+  padding-top: 13px;
+  padding-left: 22px;
+  padding-right: 22px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #f8f7f4;
+}
+
+.subscription-form p {
   font-weight: 400;
 }
 
