@@ -112,8 +112,17 @@ body {
 }
 
 .slider .add-button {
+  width: 280px;
+  height: 63px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #f16743, #e84c36);
+  padding-left: 8px;
+  padding-bottom: 6px;
+  box-shadow: 0 2px 2px 0 #ab5948;
   font-size: 32px;
   line-height: 44px;
+  text-shadow: 0 2px 2px #c63d24;
 }
 
 .offers {
