@@ -67,9 +67,22 @@ body {
 
 .user-navigation {
   display: flex;
+  justify-content: space-between;
+  width: 262px;
+  height: 32px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
+}
+
+.search {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #9db1a5;
+  background-image: url("../img/loupe.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .slider {
