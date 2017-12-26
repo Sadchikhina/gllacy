@@ -136,13 +136,15 @@ body {
 .time-contact {
   display: flex;
   flex-direction: column;
-  margin-left: 950px;
-  margin-bottom: 250px;
+  align-items: flex-end;
+  margin-left: 975px;
+  margin-bottom: 276px;
 }
 
 .work-hours {
   font-size: 14px;
   line-height: 16px;
+  margin-bottom: 4px;
 }
 
 .telephone {
@@ -178,6 +180,9 @@ body {
 .slider p {
   font-size: 60px;
   line-height: 60.35px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 29px;
 }
 
 .slider .add-button {
@@ -187,11 +192,33 @@ body {
   border-radius: 50px;
   background: linear-gradient(to bottom, #f16743, #e84c36);
   padding-left: 8px;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
   box-shadow: 0 2px 2px 0 #ab5948;
   font-size: 32px;
   line-height: 44px;
   text-shadow: 0 2px 2px #c63d24;
+}
+
+.slider-pagination {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 79px;
+  height: 21px;
+  bottom: 63px;
+  left: 0;
+}
+
+.slider-pagination-dot {
+  box-sizing: border-box;
+  width: 21px;
+  height: 21px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.slider-pagination-dot-active {
+  background: #ffffff;
 }
 
 .offers {
@@ -240,8 +267,29 @@ body {
 }
 
 .add-bonus {
+  height: 45px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #f16743, #e84c36);
+  box-shadow: 0 2px 2px 0 #7e0a00;
   font-size: 18px;
   line-height: 24px;
+  text-shadow: 0 2px 2px #c63d24;
+  margin-top: 45px;
+}
+
+.raspberry-bonus .add-bonus {
+  width: 165px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-left: 355px;
+}
+
+.chocolate-bonus .add-bonus {
+  width: 189px;
+  padding-left: 2px;
+  padding-bottom: 6px;
+  margin-left: 331px;
 }
 
 .hit-catalog {
