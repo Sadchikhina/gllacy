@@ -510,11 +510,31 @@ body {
 
 .subscription-form p {
   font-weight: 400;
+  margin-bottom: 35px;
+}
+
+input[name="youremail"] {
+  box-sizing: border-box;
+  width: 366px;
+  height: 44px;
+  border: 1px solid #d3d3d2;
+  border-radius: 7px;
+  padding-left: 10px;
+  margin-right: 7px;
 }
 
 .send-button {
+  width: 129px;
+  height: 45px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #f16743, #e84c36);
+  padding-left: 8px;
+  padding-bottom: 3px;
+  box-shadow: 0 2px 2px 0 #c9685d;
   font-size: 18px;
   line-height: 24px;
+  text-shadow: 0 2px 2px #c63d24;
 }
 
 .breadscrumbs-menu {
