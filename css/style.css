@@ -583,6 +583,7 @@ input[name="youremail"] {
 .map {
   position: relative;
   height: 430px;
+  margin-bottom: 22px;
 }
 
 .interactive-map {
@@ -652,4 +653,42 @@ input[name="youremail"] {
   text-shadow: 0 2px 2px #c63d24;
   padding-bottom:5px;
   margin: 0;
+}
+
+.footer-flex-wrapper {
+  display: flex;
+  margin: 0;
+  margin-left: 31px;
+}
+
+.social-list {
+  display: flex;
+}
+
+.social {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #c2cec7;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.twitter {
+  background-image: url("../img/twitter.svg");
+  background-repeat: no-repeat;
+}
+
+.instagram {
+  background-image: url("../img/instagram.svg");
+  background-repeat: no-repeat;
+}
+
+.facebook {
+  background-image: url("../img/fb.svg");
+  background-repeat: no-repeat;
+}
+
+.vk {
+  background-image: url("../img/vk.svg");
+  background-repeat: no-repeat;
 }
