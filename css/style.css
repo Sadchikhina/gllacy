@@ -583,7 +583,6 @@ input[name="youremail"] {
 .map {
   position: relative;
   height: 430px;
-  margin-bottom: 22px;
 }
 
 .interactive-map {
@@ -601,7 +600,7 @@ input[name="youremail"] {
   flex-direction: column;
   position: absolute;
   top: 62px;
-  right: 68px;
+  right: 259px;
   width: 302px;
   height: 305px;
   background-color: #ffffff;
@@ -657,12 +656,15 @@ input[name="youremail"] {
 
 .footer-flex-wrapper {
   display: flex;
-  margin: 0;
-  margin-left: 31px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .social-list {
   display: flex;
+  margin-left: 2px;
+  margin-top: 35px;
+  margin-right: 10px;
 }
 
 .social {
@@ -691,4 +693,64 @@ input[name="youremail"] {
 .vk {
   background-image: url("../img/vk.svg");
   background-repeat: no-repeat;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 33px;
+}
+
+.left-column-info,
+.right-column-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.left-column-info {
+  margin-right: 32px;
+}
+
+.info p {
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+}
+
+.providers {
+  position: relative;
+}
+
+.providers::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/heart.svg");
+  background-repeat: no-repeat;
+  top: 3px;
+  right: 118px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 60px;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 17px;
+  margin-right: 8px;
+}
+
+.copyright a,
+.htmlacademy-logo,
+.copyright p {
+  color: #fff;
+  padding: 0;
+  margin: 0;
 }
