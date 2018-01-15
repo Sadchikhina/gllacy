@@ -27,6 +27,7 @@ body {
 }
 
 .cite-navigation,
+.catalog-list,
 .user-navigation,
 .breadscrumbs-menu,
 .social-list {
@@ -57,12 +58,66 @@ body {
   width: 350px;
   line-height: 18px;
   font-weight: 400;
-  text-decoration: underline;
   padding: 0;
   margin: 0;
-  padding-top: 21px;
+  padding-top: 20px;
   padding-left: 24px;
   margin-right: 316px;
+}
+
+.cite-navigation > li {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+  border-radius: 30% 25%;
+  background-color: #eda796;
+}
+
+.cite-navigation > li:hover .catalog-list {
+  display: block;
+}
+
+.catalog-list {
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 140px;
+  height: 173px;
+  border-radius: 7px;
+  background-color: #f8f7f4;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+.catalog-list a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-list a:hover {
+  background-color: #fbded7;
+}
+
+.catalog-list li {
+  position: relative;
+}
+
+.catalog-list li:first-child::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: -10px;
+  width: 130px;
+  height: 1px;
+  background: #d1d0ce;
 }
 
 .user-navigation {
