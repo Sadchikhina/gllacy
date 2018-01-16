@@ -55,67 +55,104 @@ body {
 .cite-navigation {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 390px;
   line-height: 18px;
   font-weight: 400;
   padding: 0;
   margin: 0;
-  padding-top: 20px;
-  padding-left: 24px;
-  margin-right: 316px;
+  margin-top: 13px;
+  margin-left: 11px;
+  margin-right: 300px;
 }
 
 .cite-navigation > li {
+  box-sizing: border-box;
   position: relative;
   cursor: pointer;
   text-decoration: underline;
-  border-radius: 30% 25%;
-  background-color: #eda796;
+  height: 32px;
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 13px;
+  padding-top: 6px;
 }
 
 .cite-navigation > li:hover .catalog-list {
   display: block;
 }
 
+.cite-navigation > li:hover {
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
 .catalog-list {
-  display: none;
   box-sizing: border-box;
   position: absolute;
-  top: 20px;
-  left: -20px;
-  width: 140px;
-  height: 173px;
-  border-radius: 7px;
+  top: 37px;
+  left: -8px;
+  width: 143px;
+  height: 171px;
+  border-radius: 5px;
   background-color: #f8f7f4;
   padding: 0;
   margin: 0;
   z-index: 1;
+  display: none;
 }
 
 .catalog-list a {
-  display: block;
-  text-decoration: none;
   color: #000000;
   font-size: 14px;
   line-height: 16px;
-  padding: 0;
-  margin: 0;
-}
-
-.catalog-list a:hover {
-  background-color: #fbded7;
+  text-decoration: none;
 }
 
 .catalog-list li {
+  box-sizing: border-box;
   position: relative;
+  padding-left: 20px;
+}
+
+.new-items {
+  height: 38px;
+  border-radius: 5px 5px 0 0;
+  padding-top: 9px;
+  margin-bottom: 1px;
+}
+
+.cream-items {
+  height: 33px;
+  padding-top: 9px;
+}
+
+.sherbet-items {
+  height: 33px;
+  padding-top: 6px;
+}
+
+.fruitice-items {
+  height: 33px;
+  padding-top: 5px;
+}
+
+.melorin-items {
+  height: 33px;
+  border-radius: 0 0 5px 5px;
+  padding-top: 3px;
+}
+
+.catalog-list li:hover {
+  background-color: #fbded7;
 }
 
 .catalog-list li:first-child::after {
   content: "";
   position: absolute;
-  top: 23px;
-  left: -10px;
-  width: 130px;
+  top: 38px;
+  right: 8px;
+  width: 128px;
   height: 1px;
   background: #d1d0ce;
 }
@@ -123,7 +160,7 @@ body {
 .user-navigation {
   display: flex;
   justify-content: space-between;
-  width: 262px;
+  width: 263px;
   height: 32px;
   font-size: 14px;
   line-height: 16px;
