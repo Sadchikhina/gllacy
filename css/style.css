@@ -40,6 +40,7 @@ body {
 .feedback-button,
 .filter-button {
   color: #ffffff;
+  cursor: pointer;
 }
 
 .main-navigation {
@@ -147,6 +148,18 @@ body {
   background-color: #fbded7;
 }
 
+.catalog-list li:active {
+  background-color: #f6b5a5;
+}
+
+.catalog-list .active {
+  background-color: #d07058;
+}
+
+.catalog-list .active-link {
+  color: #ffffff;
+}
+
 .catalog-list li:first-child::after {
   content: "";
   position: absolute;
@@ -160,6 +173,7 @@ body {
 .user-navigation {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
   width: 263px;
   height: 32px;
   font-size: 14px;
@@ -807,8 +821,8 @@ input[name="youremail"] {
   margin-right: 32px;
 }
 
-.info p {
-  text-decoration: underline;
+.info a {
+  color: #ffffff;
   padding: 0;
   margin: 0;
 }
