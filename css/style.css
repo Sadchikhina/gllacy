@@ -216,7 +216,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #9db1a5;
+  background-color: rgba(255, 255, 255, 0.2);
   background-image: url("../img/loupe.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -233,7 +233,7 @@ body {
   width: 93px;
   height: 32px;
   border-radius: 50px;
-  background-color: #9db1a5;
+  background-color: rgba(255, 255, 255, 0.2);
   padding-top: 8px;
   padding-left: 44px;
 }
@@ -264,7 +264,7 @@ body {
   width: 116px;
   height: 32px;
   border-radius: 50px;
-  background-color: #9db1a5;
+  background-color: rgba(255, 255, 255, 0.2);
   padding-top: 8px;
   padding-left: 44px;
 }
@@ -362,7 +362,8 @@ body {
   width: 79px;
   height: 21px;
   bottom: 63px;
-  left: 0;
+  cursor: pointer;
+
 }
 
 .slider-pagination-dot {
@@ -875,6 +876,13 @@ input[name="youremail"] {
   color: #ffffff;
   padding: 0;
   margin: 0;
+}
+
+.info a:hover,
+.info a:active,
+.copyright a:hover,
+.copyright a:active {
+  color: #ffbc9e;
 }
 
 .providers {
