@@ -59,7 +59,7 @@ body {
 .feedback-button:active {
   background: linear-gradient(to bottom, #e84c36, #f16743);
   box-shadow: inset 0 2px 2px 0 #952718;
-  outline: none;
+
 }
 
 .main-navigation {
@@ -100,13 +100,13 @@ body {
 .cite-navigation > li:hover {
   color: #000000;
   text-decoration: none;
-  background-color: #ffffff;
+  background-color: #f8f7f4;
 }
 
 .cite-navigation > li:active {
   color: #000000;
   text-decoration: none;
-  background-color: #ffffff;
+  background-color: #f8f7f4;
   box-shadow: inset 0 2px 2px 0 #696969;
 }
 
@@ -372,9 +372,19 @@ body {
   height: 21px;
   border: 2px solid #ffffff;
   border-radius: 50%;
+  outline: none;
 }
 
-.slider-pagination-dot-active {
+.slider-pagination-dot:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.slider-pagination-dot-active,
+.slider-pagination-dot-active:hover,
+.slider-pagination-dot:active
+ {
   background: #ffffff;
 }
 
