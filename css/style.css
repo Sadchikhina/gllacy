@@ -97,14 +97,25 @@ body {
   padding-top: 6px;
 }
 
-.cite-navigation > li:hover .catalog-list {
-  display: block;
-}
-
 .cite-navigation > li:hover {
   color: #000000;
   text-decoration: none;
   background-color: #ffffff;
+}
+
+.cite-navigation > li:active {
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 2px 0 #696969;
+}
+
+.menu-catalog:hover .catalog-list {
+  display: block;
+}
+
+.menu-catalog:active .catalog-list {
+  display: block;
 }
 
 .catalog-list {
@@ -211,6 +222,11 @@ body {
   background-position: 50% 50%;
 }
 
+.search:hover {
+  background-color: #fff;
+  background-image: url("../img/loupe-black.svg");
+}
+
 .enter {
   box-sizing: border-box;
   position: relative;
@@ -232,6 +248,16 @@ body {
   left: 17px;
 }
 
+.enter:hover,
+.cart:hover {
+  background-color: #fff;
+  color: #323232;
+}
+
+.enter:hover::before {
+  background: url("../img/entrance-black.svg") no-repeat;
+}
+
 .cart {
   box-sizing: border-box;
   position: relative;
@@ -251,6 +277,10 @@ body {
   background: url("../img/basket.svg") no-repeat;
   top: 6px;
   left: 16px;
+}
+
+.cart:hover::before {
+  background: url("../img/basket-black.svg") no-repeat;
 }
 
 .slider {
