@@ -33,7 +33,21 @@
               <input class="search-field" type="text" name="search" placeholder="Что ищем?">
             </form>
           </li>
-          <li class="enter">Вход</li>
+          <li class="enter">Вход
+            <form class="enter-form" action="#" method="get">
+              <div class="full-width">
+                <input class="email-field" type="email" name="enter-email" placeholder="Электронная почта">
+                <input class="password-field" type="password" name="yourpassword" placeholder="Пароль">
+              </div>
+              <div class="half-width">
+                <button class="enter-button" aria-label="Вход">Войти</button>
+                <div class="help">
+                  <a href="#">Забыли пароль?</a>
+                  <a href="#">Новая регистрация</a>
+                </div>
+              </div>
+            </form>
+          </li>
           <li class="cart">Пусто</li>
         </ul>
       </nav>
@@ -132,7 +146,7 @@
           <h4 class="visually-hidden">Подписка</h4>
           <form class="subscription-form" action="#" method="post">
             <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-            <input type="email" name="youremail" id="email" placeholder="Электронная почта">
+            <input class="subscription-email" type="email" name="sub-email" id="email" placeholder="Электронная почта">
             <button class="send-button" type="submit" name="submit-button" aria-label="Отправить">Отправить</button>
           </form>
         </div>
