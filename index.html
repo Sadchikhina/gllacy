@@ -37,7 +37,7 @@
             <form class="enter-form" action="#" method="get">
               <div class="full-width">
                 <input class="email-field" type="email" name="enter-email" placeholder="Электронная почта">
-                <input class="password-field" type="password" name="yourpassword" placeholder="Пароль">
+                <input class="password-field" type="password" name="enter-password" placeholder="Пароль">
               </div>
               <div class="half-width">
                 <button class="enter-button" aria-label="Вход">Войти</button>
@@ -170,6 +170,16 @@
           <button class="feedback-button" aria-label="Форма обратной связи">Форма обратной связи</button>
         </div>
       </section>
+      <form class="modal-window" action="#" method="post">
+        <div class="modal-window-header">
+          <label class="modal-window-label">Мы обязательно вам ответим!</label>
+          <button class="close-button" type="button" name="close" aria-label="Закрыть"></button>
+        </div>
+        <input class="name-field" type="text" name="modal-name" placeholder="Как вас зовут?">
+        <input class="modal-email-field" type="email" name="modal-email" placeholder="Ваша почти для ответа?">
+        <textarea class="comment-field" name="modal-comment" rows="8" cols="50"></textarea>
+        <button class="modal-window-button" type="submit" name="submit-button" aria-label="Отправить">Отправить</button>
+      </form>
       <div class="footer-flex-wrapper">
           <section class="social-list">
             <a class="social twitter" href="https://twitter.com/" target="_blank" aria-label="Твиттер"></a>

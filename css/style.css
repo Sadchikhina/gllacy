@@ -947,6 +947,40 @@ input[name="sub-email"] {
   margin: 0;
 }
 
+.modal-window {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 478px;
+  height: 443px;
+  border-radius: 5px;
+  background-color: #f8f7f4;
+  padding: 0;
+  margin: 0;
+  padding-top: 22px;
+  padding-left: 24px;
+  padding-bottom: 25px;
+}
+
+.modal-window-label {
+  color: #323232;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.name-field,
+.modal-email-field {
+  box-sizing: border-box;
+  width: 265px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d2;
+}
+
+
+
 .footer-flex-wrapper {
   display: flex;
   justify-content: space-between;
