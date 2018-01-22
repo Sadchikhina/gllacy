@@ -64,7 +64,6 @@ body {
 .enter-button:active {
   background: linear-gradient(to bottom, #e84c36, #f16743);
   box-shadow: inset 0 2px 2px 0 #952718;
-
 }
 
 .main-navigation {
@@ -392,7 +391,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   margin-left: 975px;
-  margin-bottom: 276px;
+  margin-bottom: 274px;
 }
 
 .work-hours {
@@ -410,11 +409,34 @@ body {
   position: absolute;
   width: 1146px;
   height: 574px;
-  background-image: url("../img/ice-cream1.png"),
-                    url("../img/ice-cream2.png");
-  background-repeat: no-repeat;
-  background-position: 250px 10px,
-                       565px 53px;
+}
+
+.cream-brule,
+.raspberry-jam {
+  position: absolute;
+}
+
+.cream-brule {
+  top: 10px;
+  left: 250px;
+  z-index: -1;
+}
+
+.raspberry-jam {
+  top: 52px;
+  right: 249px;
+  z-index: -2;
+}
+
+.slide1 p {
+  font-size: 60px;
+  line-height: 60.35px;
+  width: 700px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 29px;
+  margin-left: 224px;
 }
 
 .slide2 {
@@ -429,14 +451,6 @@ body {
   width: 1146px;
   height: 574px;
   visibility: hidden;
-}
-
-.slider p {
-  font-size: 60px;
-  line-height: 60.35px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 29px;
 }
 
 .slider .add-button {
@@ -487,9 +501,6 @@ body {
 .offers {
   display: flex;
   justify-content: space-between;
-  background-image: url("../img/ice-cream1.png");
-  background-repeat: no-repeat;
-  background-position: 250px -565px;
   margin-bottom: 39px;
 }
 
