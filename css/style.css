@@ -35,7 +35,7 @@ body {
 }
 
 .add-button,
-.add-bonus,
+.bonus-button,
 .send-button,
 .feedback-button,
 .filter-button,
@@ -48,7 +48,7 @@ body {
 }
 
 .slider .add-button:hover,
-.add-bonus:hover,
+.bonus-button:hover,
 .send-button:hover,
 .feedback-button:hover,
 .enter-button:hover {
@@ -58,7 +58,7 @@ body {
 }
 
 .slider .add-button:active,
-.add-bonus:active,
+.bonus-button:active,
 .send-button:active,
 .feedback-button:active,
 .enter-button:active {
@@ -529,7 +529,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.add-bonus {
+.bonus-button {
   height: 45px;
   border-radius: 50px;
   box-shadow: 0 2px 2px 0 #7e0a00;
@@ -539,14 +539,14 @@ body {
   margin-top: 45px;
 }
 
-.raspberry-bonus .add-bonus {
+.raspberry-bonus .bonus-button {
   width: 165px;
   padding-left: 5px;
   padding-bottom: 5px;
   margin-left: 355px;
 }
 
-.chocolate-bonus .add-bonus {
+.chocolate-bonus .bonus-button {
   width: 189px;
   padding-left: 2px;
   padding-bottom: 6px;
