@@ -411,13 +411,39 @@ body {
   height: 574px;
 }
 
+.shadow1 {
+  position: absolute;
+  top: 120px;
+  left: 460px;
+  width: 40px;
+  height: 320px;
+  transform: rotate(152deg);
+  border-radius: 50%;
+  background-color: #cdf4df;
+  box-shadow: 0 0 250px 150px #cdf4df;
+  z-index: -2;
+}
+
+.shadow2 {
+  position: absolute;
+  top: 140px;
+  left: 700px;
+  width: 40px;
+  height: 320px;
+  transform: rotate(25deg);
+  border-radius: 50%;
+  background-color: #cdf4df;
+  box-shadow: 0 0 200px 100px #cdf4df;
+  z-index: -2;
+}
+
 .cream-brule,
 .raspberry-jam {
   position: absolute;
 }
 
 .cream-brule {
-  top: 10px;
+  top: 9px;
   left: 250px;
   z-index: -1;
 }
@@ -493,8 +519,7 @@ body {
 
 .slider-pagination-dot-active,
 .slider-pagination-dot-active:hover,
-.slider-pagination-dot:active
- {
+.slider-pagination-dot:active {
   background: #ffffff;
 }
 
