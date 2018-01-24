@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url]
 
 * Студент: [Варя Севостьянова](https://up.htmlacademy.ru/javascript/12/user/217242).
-* Наставник: [Евгений Сальников](https://htmlacademy.ru/profile/id24537).
+* Наставник: [Евгений Сальников] (https://htmlacademy.ru/profile/id24537).
 
 ---
 
