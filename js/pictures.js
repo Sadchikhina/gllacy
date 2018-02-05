@@ -51,20 +51,12 @@ for (var i = 1; i < 26; i++) {
 pictureListElement.appendChild(fragment);
 
 document.querySelector('.gallery-overlay').classList.remove('hidden');
-var gallery = document.querySelector('.gallery-overlay');
 
 var showPhoto = function (photo) {
-  var photoElement = template.cloneNode(true);
+  var photoElement = document.querySelector('.gallery-overlay');
   photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
   photoElement.querySelector('.likes-count').textContent = photo.likes;
   photoElement.querySelector('.comments-count').textContent = photo.comments;
-  return photoElement;
 };
 
-var photos = {
-  url: 'photos/' + 1 + '.jpg',
-  likes: getRandomLikes(),
-  comments: getRandomСomments()
-};
-
-gallery.appendChild(showPhoto(photos));
+showPhoto(picture[1]);
