@@ -16,7 +16,7 @@ var createPhotos = function () {
 
   /**
    * Создает рандомное количество комментариев
-   * @return {number}
+   * @return {Array}
    */
   var getRandomСomments = function () {
     var comments = [];
