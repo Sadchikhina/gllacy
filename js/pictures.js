@@ -14,15 +14,23 @@ var COMMENTS = [
 
 var createPhotos = function () {
 
+  /**
+   * Создает рандомное количество комментариев
+   * @return {number}
+   */
   var getRandomСomments = function () {
     var comments = [];
-    if (Math.random() > 1) {
+    if (Math.random() > 0.5) {
       comments.push((Math.random() * COMMENTS.length));
     }
     comments.push((Math.random() * COMMENTS.length));
-    return Math.floor(comments);
+    return comments;
   };
 
+  /**
+   * Создает рандомное количество лайков
+   * @return {number}
+   */
   var getRandomLikes = function () {
     return Math.floor(Math.random() * (MAX - MIN) + MIN);
   };
@@ -71,7 +79,7 @@ var createPhotos = function () {
     var photoElement = document.querySelector('.gallery-overlay');
     photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
     photoElement.querySelector('.likes-count').textContent = photo.likes;
-    photoElement.querySelector('.comments-count').textContent = photo.comments;
+    photoElement.querySelector('.comments-count').textContent = photo.comments.length;
   };
 
   showPhoto(picture[1]);
