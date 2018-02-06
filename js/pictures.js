@@ -12,68 +12,70 @@ var COMMENTS = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-var getRandomСomments = function () {
-  var comments = [];
-  if (Math.random() > 1) {
+var createPhotos = function () {
+
+  var getRandomСomments = function () {
+    var comments = [];
+    if (Math.random() > 1) {
+      comments.push((Math.random() * COMMENTS.length));
+    }
     comments.push((Math.random() * COMMENTS.length));
-  }
-  comments.push((Math.random() * COMMENTS.length));
-  return Math.floor(comments);
-};
-
-var getRandomLikes = function () {
-  return Math.floor(Math.random() * (MAX - MIN) + MIN);
-};
-
-var template = document.querySelector('#picture-template').content;
-var pictureListElement = document.querySelector('.pictures');
-
-/**
- * Создает DOM-элемент превью картинки
- * @param {Object} elem
- * @return {Object}
- */
-
-var renderPictures = function (elem) {
-  var pictureElement = template.cloneNode(true);
-  pictureElement.querySelector('img').setAttribute('src', elem.url);
-  pictureElement.querySelector('.picture-likes').textContent = elem.likes;
-  pictureElement.querySelector('.picture-comments').textContent = elem.comments;
-  return pictureElement;
-};
-
-/**
- * Создает массив из 25 картинок
- * @param {Array.<picture>}
- */
-
-var picture = [];
-
-var fragment = document.createDocumentFragment();
-for (var i = 1; i < 26; i++) {
-  picture[i] = {
-    url: 'photos/' + i + '.jpg',
-    likes: getRandomLikes(),
-    comments: getRandomСomments()
+    return Math.floor(comments);
   };
-  fragment.appendChild(renderPictures(picture[i]));
-}
 
-pictureListElement.appendChild(fragment);
+  var getRandomLikes = function () {
+    return Math.floor(Math.random() * (MAX - MIN) + MIN);
+  };
 
-document.querySelector('.gallery-overlay').classList.remove('hidden');
+  var template = document.querySelector('#picture-template').content;
+  var pictureListElement = document.querySelector('.pictures');
 
-/**
- * Создает DOM-элемент картинку
- * @param {Object} photo
- * @return {Object}
- */
+  /**
+   * Создает DOM-элемент превью картинки
+   * @param {Object} elem
+   * @return {Object}
+   */
+  var renderPictures = function (elem) {
+    var pictureElement = template.cloneNode(true);
+    pictureElement.querySelector('img').setAttribute('src', elem.url);
+    pictureElement.querySelector('.picture-likes').textContent = elem.likes;
+    pictureElement.querySelector('.picture-comments').textContent = elem.comments;
+    return pictureElement;
+  };
 
-var showPhoto = function (photo) {
-  var photoElement = document.querySelector('.gallery-overlay');
-  photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
-  photoElement.querySelector('.likes-count').textContent = photo.likes;
-  photoElement.querySelector('.comments-count').textContent = photo.comments;
+  /**
+   * Создает массив из 25 картинок
+   * @param {Array.<picture>}
+   */
+  var picture = [];
+
+  var fragment = document.createDocumentFragment();
+  for (var i = 1; i < 26; i++) {
+    picture[i] = {
+      url: 'photos/' + i + '.jpg',
+      likes: getRandomLikes(),
+      comments: getRandomСomments()
+    };
+    fragment.appendChild(renderPictures(picture[i]));
+  }
+
+  pictureListElement.appendChild(fragment);
+
+  document.querySelector('.gallery-overlay').classList.remove('hidden');
+
+  /**
+   * Создает DOM-элемент картинку
+   * @param {Object} photo
+   */
+  var showPhoto = function (photo) {
+    var photoElement = document.querySelector('.gallery-overlay');
+    photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
+    photoElement.querySelector('.likes-count').textContent = photo.likes;
+    photoElement.querySelector('.comments-count').textContent = photo.comments;
+  };
+
+  showPhoto(picture[1]);
+
 };
 
-showPhoto(picture[1]);
+createPhotos();
