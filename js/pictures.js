@@ -28,6 +28,12 @@ var getRandomLikes = function () {
 var template = document.querySelector('#picture-template').content;
 var pictureListElement = document.querySelector('.pictures');
 
+/**
+ * Создает DOM-элемент превью картинки
+ * @param {Object} elem
+ * @return {Object}
+ */
+
 var renderPictures = function (elem) {
   var pictureElement = template.cloneNode(true);
   pictureElement.querySelector('img').setAttribute('src', elem.url);
@@ -35,6 +41,11 @@ var renderPictures = function (elem) {
   pictureElement.querySelector('.picture-comments').textContent = elem.comments;
   return pictureElement;
 };
+
+/**
+ * Создает массив из 25 картинок
+ * @param {Array.<picture>}
+ */
 
 var picture = [];
 
@@ -51,6 +62,12 @@ for (var i = 1; i < 26; i++) {
 pictureListElement.appendChild(fragment);
 
 document.querySelector('.gallery-overlay').classList.remove('hidden');
+
+/**
+ * Создает DOM-элемент картинку
+ * @param {Object} photo
+ * @return {Object}
+ */
 
 var showPhoto = function (photo) {
   var photoElement = document.querySelector('.gallery-overlay');
