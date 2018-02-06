@@ -14,11 +14,11 @@ var COMMENTS = [
 
 var getRandomСomments = function () {
   var comments = [];
-  if (Math.random() > 0.5) {
-    comments.push(COMMENTS[Math.floor(Math.random() * COMMENTS.length)]);
+  if (Math.random() > 1) {
+    comments.push((Math.random() * COMMENTS.length));
   }
-  comments.push(COMMENTS[Math.floor(Math.random() * COMMENTS.length)]);
-  return comments;
+  comments.push((Math.random() * COMMENTS.length));
+  return Math.floor(comments);
 };
 
 var getRandomLikes = function () {
