@@ -21,9 +21,9 @@ var createPhotos = function () {
   var getRandomСomments = function () {
     var comments = [];
     if (Math.random() > 0.5) {
-      comments.push((Math.random() * COMMENTS.length));
+      comments.push(COMMENTS[Math.floor(Math.random() * COMMENTS.length)]);
     }
-    comments.push((Math.random() * COMMENTS.length));
+    comments.push(COMMENTS[Math.floor(Math.random() * COMMENTS.length)]);
     return comments;
   };
 
