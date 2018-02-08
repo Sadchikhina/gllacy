@@ -69,8 +69,6 @@ var createPhotos = function () {
 
   pictureListElement.appendChild(fragment);
 
-  document.querySelector('.gallery-overlay').classList.remove('hidden');
-
   /**
    * Создает DOM-элемент картинку
    * @param {Object} photo
@@ -87,3 +85,25 @@ var createPhotos = function () {
 };
 
 createPhotos();
+
+
+/**
+ * Загрузка изображения и показ формы редактирования  inputUpload.onchange = openEditor;
+ */
+
+var inputUpload = document.querySelector('#upload-file');
+var editor = document.querySelector('.upload-overlay');
+
+var openEditor = function () {
+  editor.classList.remove('hidden');
+};
+
+inputUpload.addEventListener('change', function () {
+  openEditor();
+});
+
+/**
+ * Применение эффекта для изображения и Редактирование размера изображения
+ */
+
+var sliderPin = document.querySelector('.upload-effect-level-pin');
