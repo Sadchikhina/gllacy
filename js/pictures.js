@@ -71,6 +71,7 @@ var createPhotos = function () {
 
   document.querySelector('.gallery-overlay').classList.remove('hidden');
 
+
   /**
    * Создает DOM-элемент картинку
    * @param {Object} photo
