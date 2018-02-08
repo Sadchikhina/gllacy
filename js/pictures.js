@@ -88,7 +88,7 @@ createPhotos();
 
 
 /**
- * Загрузка изображения и показ формы редактирования  inputUpload.onchange = openEditor;
+ * Загрузка изображения и показ формы редактирования
  */
 
 var inputUpload = document.querySelector('#upload-file');
@@ -104,6 +104,26 @@ inputUpload.addEventListener('change', function () {
 
 /**
  * Применение эффекта для изображения и Редактирование размера изображения
+ *
+ * Функция для последующего вычисления пропорции положение ползунка/сила эффекта
+ * var getMaxEffect = function (arr) {
+   var maxEffect = arr[0];
+   for (var i = 0; i < arr.length; i++) {
+     if (arr[i] > maxEffect) {
+       maxEffect = arr[i];
+     }
+   }
+   return maxEffect;
+ };
+ *
  */
 
 var sliderPin = document.querySelector('.upload-effect-level-pin');
+
+sliderPin.addEventListener('mouseup', function () {
+});
+
+
+/**
+ * Показ изображения в полноэкранном режиме
+ */
