@@ -169,42 +169,5 @@ heat.addEventListener('click', function () {
  */
 
 /**
- * Изменение эффектов при нажатии на фильтры
- */
-
-var imagePreview = document.querySelector('.effect-image-preview');
-var effectControl = document.querySelector('.upload-effect-controls');
-var chrome = effectControl.querySelector('.upload-effect-label-chrome');
-var sepia = effectControl.querySelector('.upload-effect-label-sepia');
-var marvin = effectControl.querySelector('.upload-effect-label-marvin');
-var phobos = effectControl.querySelector('.upload-effect-label-phobos');
-var heat = effectControl.querySelector('.upload-effect-label-heat');
-
-chrome.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-chrome');
-});
-
-sepia.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-sepia');
-});
-
-marvin.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-marvin');
-});
-
-phobos.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-phobos');
-});
-
-heat.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-heat');
-});
-
-
-/**
- * Изменение размера изображения
- */
-
-/**
  * Показ изображения в полноэкранном режиме
  */
