@@ -70,7 +70,7 @@ var createPhotos = function () {
   pictureListElement.appendChild(fragment);
 
   /**
-   * Создает DOM-элемент картинку
+   * Создает DOM-элемент картинку  TEST!!
    * @param {Object} photo
    */
   var showPhoto = function (photo) {
