@@ -94,22 +94,101 @@ var inputUpload = document.querySelector('#upload-file');
 var editor = document.querySelector('.upload-overlay');
 var editorClose = document.querySelector('.upload-form-cancel');
 
-var openEditor = function () {
-  editor.classList.remove('hidden');
+var ESC_KEYCODE = 27;
+
+var showForm = function () {
+
+  /**
+   * Закрывает окно по нажатию на ESC
+   * @param  {type} evt
+   */
+
+  var openEditorHadler = function (evt) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      closeEditor();
+    }
+  };
+
+  /**
+ * Открывает окно, закрывает по нажатию на ESC
+ */
+
+  var openEditor = function () {
+    editor.classList.remove('hidden');
+    document.addEventListener('keydown', openEditorHadler);
+  };
+
+  /**
+   * Закрывает окно
+   */
+  var closeEditor = function () {
+    editor.classList.add('hidden');
+    editor.removeEventListener('keydown', openEditorHadler);
+  };
+
+  inputUpload.addEventListener('change', function () {
+    openEditor();
+  });
+
+  editorClose.addEventListener('click', function () {
+    closeEditor();
+    editorClose.reset();
+  });
 };
 
-var closeEditor = function () {
-  editor.classList.add('hidden');
+showForm();
+
+var sliderPin = document.querySelector('.upload-effect-level-pin');
+
+sliderPin.addEventListener('mouseup', function () {
+});
+
+var imagePreview = document.querySelector('.effect-image-preview');
+var effectControl = document.querySelector('.upload-effect-controls');
+var chrome = effectControl.querySelector('.upload-effect-label-chrome');
+var sepia = effectControl.querySelector('.upload-effect-label-sepia');
+var marvin = effectControl.querySelector('.upload-effect-label-marvin');
+var phobos = effectControl.querySelector('.upload-effect-label-phobos');
+var heat = effectControl.querySelector('.upload-effect-label-heat');
+
+
+/**
+ * Изменение эффектов при нажатии на фильтры
+ */
+
+var implyFilter = function () {
+
+  var getFilter = function (effect) {
+    var checked = effect.querySelector('[name=effect]:checked');
+    return checked ? checked.value : '';
+  };
+
+  var currentEffect = getFilter(effectControl);
+
+  switch (currentEffect) {
+    case chrome:
+      imagePreview.classList.add('effect-chrome');
+      break;
+    case sepia:
+      imagePreview.classList.remove('effect-chrome');
+      imagePreview.classList.add('effect-sepia');
+      break;
+    case marvin:
+      imagePreview.classList.remove('effect-sepia');
+      imagePreview.classList.add('effect-marvin');
+      break;
+    case phobos:
+      imagePreview.classList.remove('effect-marvin');
+      imagePreview.classList.add('effect-phobos');
+      break;
+    case heat:
+      imagePreview.classList.remove('effect-phobos');
+      imagePreview.classList.add('effect-heat');
+      break;
+  }
 };
 
-inputUpload.addEventListener('change', function () {
-  openEditor();
-});
-
-editorClose.addEventListener('click', function () {
-  closeEditor();
-  editorClose.reset();
-});
+implyFilter();
 
 /**
  * Применение эффекта для изображения и Редактирование размера изображения
@@ -127,47 +206,11 @@ editorClose.addEventListener('click', function () {
  *
  */
 
-var sliderPin = document.querySelector('.upload-effect-level-pin');
-
-sliderPin.addEventListener('mouseup', function () {
-});
-
-/**
- * Изменение эффектов при нажатии на фильтры
- */
-
-var imagePreview = document.querySelector('.effect-image-preview');
-var effectControl = document.querySelector('.upload-effect-controls');
-var chrome = effectControl.querySelector('.upload-effect-label-chrome');
-var sepia = effectControl.querySelector('.upload-effect-label-sepia');
-var marvin = effectControl.querySelector('.upload-effect-label-marvin');
-var phobos = effectControl.querySelector('.upload-effect-label-phobos');
-var heat = effectControl.querySelector('.upload-effect-label-heat');
-
-chrome.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-chrome');
-});
-
-sepia.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-sepia');
-});
-
-marvin.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-marvin');
-});
-
-phobos.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-phobos');
-});
-
-heat.addEventListener('click', function () {
-  imagePreview.classList.add('.effect-heat');
-});
-
 /**
  * Изменение размера изображения
  */
 
 /**
- * Показ изображения в полноэкранном режиме
- */
+  * Показ изображения в полноэкранном режиме
+  *
+  */
