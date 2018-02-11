@@ -135,6 +135,7 @@ var showForm = function () {
 
   editorClose.addEventListener('click', function () {
     closeEditor();
+
   });
 };
 
@@ -152,7 +153,7 @@ var sepia = effectControl.querySelector('.upload-effect-label-sepia');
 var marvin = effectControl.querySelector('.upload-effect-label-marvin');
 var phobos = effectControl.querySelector('.upload-effect-label-phobos');
 var heat = effectControl.querySelector('.upload-effect-label-heat');
-
+var original = effectControl.querySelector('#upload-effect-none');
 
 /**
  * Изменение эффектов при нажатии на фильтры
@@ -160,34 +161,40 @@ var heat = effectControl.querySelector('.upload-effect-label-heat');
 
 var implyFilter = function () {
 
-  var getFilter = function (effect) {
-    var checked = effect.querySelector('[name=effect]:checked');
-    return checked ? checked.value : '';
+  var addClassHandler = function (currentEffect) {
+
+    imagePreview.classList.add('effect-' + currentEffect);
   };
 
-  var currentEffect = getFilter(effectControl);
+  original.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+  });
 
-  switch (currentEffect) {
-    case chrome:
-      imagePreview.classList.add('effect-chrome');
-      break;
-    case sepia:
-      imagePreview.classList.remove('effect-chrome');
-      imagePreview.classList.add('effect-sepia');
-      break;
-    case marvin:
-      imagePreview.classList.remove('effect-sepia');
-      imagePreview.classList.add('effect-marvin');
-      break;
-    case phobos:
-      imagePreview.classList.remove('effect-marvin');
-      imagePreview.classList.add('effect-phobos');
-      break;
-    case heat:
-      imagePreview.classList.remove('effect-phobos');
-      imagePreview.classList.add('effect-heat');
-      break;
-  }
+  chrome.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+    imagePreview.classList.add('effect-chrome');
+  });
+
+  sepia.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+    imagePreview.classList.add('effect-sepia');
+  });
+
+  marvin.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+    imagePreview.classList.add('effect-marvin');
+  });
+
+  phobos.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+    imagePreview.classList.add('effect-phobos');
+  });
+
+  heat.addEventListener('click', function () {
+    imagePreview.removeEventListener('click', addClassHandler);
+    imagePreview.classList.add('effect-heat');
+  });
+
 };
 
 implyFilter();
