@@ -174,7 +174,10 @@ var implyFilter = function () {
     imagePreview.className = 'upload-effect-label';
   });
 
-  getFilter(chrome);
+  chrome.addEventListener('click', function () {
+    imagePreview.className = 'upload-effect-label';
+    imagePreview.classList.add('effect-chrome');
+  });
 
   sepia.addEventListener('click', function () {
     imagePreview.className = 'upload-effect-label';
