@@ -86,11 +86,13 @@ var createPhotos = function () {
 
 createPhotos();
 
+
 /**
  * Загрузка изображения и показ формы редактирования
  */
 
 var inputUpload = document.querySelector('#upload-file');
+var uploadForm = document.querySelector('.upload-form');
 var editor = document.querySelector('.upload-overlay');
 var editorClose = document.querySelector('.upload-form-cancel');
 
@@ -124,6 +126,7 @@ var showForm = function () {
   var closeEditor = function () {
     editor.classList.add('hidden');
     editor.removeEventListener('keydown', openEditorHadler);
+    uploadForm.reset();
   };
 
   inputUpload.addEventListener('change', function () {
@@ -132,7 +135,6 @@ var showForm = function () {
 
   editorClose.addEventListener('click', function () {
     closeEditor();
-    editorClose.reset();
   });
 };
 
@@ -191,26 +193,15 @@ var implyFilter = function () {
 implyFilter();
 
 /**
- * Применение эффекта для изображения и Редактирование размера изображения
- *
- * Функция для последующего вычисления пропорции положение ползунка/сила эффекта
- * var getMaxEffect = function (arr) {
-   var maxEffect = arr[0];
-   for (var i = 0; i < arr.length; i++) {
-     if (arr[i] > maxEffect) {
-       maxEffect = arr[i];
-     }
-   }
-   return maxEffect;
- };
- *
- */
-
-/**
- * Изменение размера изображения
- */
-
-/**
   * Показ изображения в полноэкранном режиме
   *
   */
+
+var picturePreview = document.querySelector('.picture');
+
+picturePreview.onclick = function (evt) {
+  var target = evt.target;
+  if (target.className === 'picture') {
+    document.querySelector('.gallery-overlay').classList.remove('.hidden');
+  }
+};
