@@ -135,7 +135,6 @@ var showForm = function () {
 
   editorClose.addEventListener('click', function () {
     closeEditor();
-
   });
 };
 
@@ -160,15 +159,6 @@ var original = effectControl.querySelector('#upload-effect-none');
  */
 
 var implyFilter = function () {
-
-  var getFilter = function (filter) {
-    filter.addEventListener('click', function () {
-      imagePreview.className = 'upload-effect-label';
-      imagePreview.classList.add('effect-+filter');
-    });
-  };
-
-  getFilter(chrome);
 
   original.addEventListener('click', function () {
     imagePreview.className = 'upload-effect-label';
@@ -202,6 +192,31 @@ var implyFilter = function () {
 };
 
 implyFilter();
+
+
+/**
+ * Изменение размера
+ */
+var resizeControls = document.querySelector('.upload-resize-controls');
+var decreasePicture = resizeControls.querySelector('.upload-resize-controls-button-dec');
+var increasePicture = resizeControls.querySelector('.upload-resize-controls-button-inc');
+var resizeValue = resizeControls.querySelector('.upload-resize-controls-value');
+resizeValue.value = '100%';
+
+var changeSize = function () {
+  decreasePicture.addEventListener('click', function () {
+    resizeValue.value = '75%';
+    imagePreview.style.transform = 'scale(0.75)';
+  });
+
+  increasePicture.addEventListener('click', function () {
+    resizeValue.value = '100%';
+    imagePreview.style.transform = 'scale(1)';
+  });
+
+};
+
+changeSize();
 
 /**
   * Показ изображения в полноэкранном режиме
