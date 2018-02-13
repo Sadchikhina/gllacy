@@ -13,6 +13,7 @@ var COMMENTS = [
 ];
 
 var picture = [];
+var picturePreview = document.querySelectorAll('.picture');
 
 /**
  * Создает рандомное количество комментариев
@@ -69,44 +70,41 @@ var createPhotos = function () {
     };
     fragment.appendChild(renderPictures(picture[i]));
   }
-
   pictureListElement.appendChild(fragment);
-
 };
 
 createPhotos();
 
-var picturePreview = document.querySelectorAll('.picture');
-
-var pictureClickHandler = function (evt) {
-  if (evt.target === picturePreview) {
-    document.querySelector('.gallery-overlay').classList.remove('hidden');
-  }
-};
-
-for (var i = 0; i < picturePreview.length; i++) {
-  picturePreview[i].addEventListener('click', pictureClickHandler);
-}
-
 /**
  * Создает DOM-элемент картинку
- * @param {Object} photo
+ * @param {Object} id
  */
-var showPhoto = function (photo) {
+var showPhoto = function (id) {
   var photoElement = document.querySelector('.gallery-overlay');
-  photoElement.querySelector('.gallery-overlay-image').setAttribute('data-id', photo.id);
-  photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
-  photoElement.querySelector('.likes-count').textContent = photo.likes;
-  photoElement.querySelector('.comments-count').textContent = photo.comments.length;
+  photoElement.querySelector('.gallery-overlay-image').setAttribute('data-id', picture[id].id);
+  photoElement.querySelector('.gallery-overlay-image').setAttribute('src', picture[id].url);
+  photoElement.querySelector('.likes-count').textContent = picture[id].likes;
+  photoElement.querySelector('.comments-count').textContent = picture[id].comments.length;
 };
 
-showPhoto(picture[i]);
+var pictureClickHandler = function (evt) {
+  evt.preventDefault();
+  var target = evt.target.dataset.id;
+  document.querySelector('.gallery-overlay').classList.remove('hidden');
+  showPhoto(target);
+};
+
+var getId = function () {
+  for (var i = 0; i < picturePreview.length; i++) {
+    picturePreview[i].addEventListener('click', pictureClickHandler);
+  }
+};
+getId();
 
 
 /**
  * Загрузка изображения и показ формы редактирования
  */
-
 var inputUpload = document.querySelector('#upload-file');
 var uploadForm = document.querySelector('.upload-form');
 var editor = document.querySelector('.upload-overlay');
@@ -120,7 +118,6 @@ var showForm = function () {
    * Закрывает окно по нажатию на ESC
    * @param  {type} evt
    */
-
   var openEditorHadler = function (evt) {
     if (evt.keyCode === ESC_KEYCODE) {
       closeEditor();
@@ -129,15 +126,15 @@ var showForm = function () {
 
   /**
  * Открывает окно, закрывает по нажатию на ESC
- */
-
+  */
   var openEditor = function () {
     editor.classList.remove('hidden');
     document.addEventListener('keydown', openEditorHadler);
   };
 
+
   /**
-   * Закрывает окно
+   * Закрытие формы
    */
   var closeEditor = function () {
     editor.classList.add('hidden');
@@ -170,10 +167,10 @@ var phobos = effectControl.querySelector('.upload-effect-label-phobos');
 var heat = effectControl.querySelector('.upload-effect-label-heat');
 var original = effectControl.querySelector('#upload-effect-none');
 
-/**
- * Изменение эффектов при нажатии на фильтры
- */
 
+/**
+ * Переключение фильтров
+ */
 var implyFilter = function () {
 
   original.addEventListener('click', function () {
@@ -208,7 +205,6 @@ var implyFilter = function () {
 };
 
 implyFilter();
-
 
 /**
  * Изменение размера
