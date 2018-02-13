@@ -14,6 +14,8 @@ var COMMENTS = [
 
 var picture = [];
 var picturePreview = document.querySelectorAll('.picture');
+var gallery = document.querySelector('.gallery-overlay');
+var galleryClose = document.querySelector('.gallery-overlay-close');
 
 /**
  * Создает рандомное количество комментариев
@@ -90,7 +92,7 @@ var showPhoto = function (id) {
 var pictureClickHandler = function (evt) {
   evt.preventDefault();
   var target = evt.target.dataset.id;
-  document.querySelector('.gallery-overlay').classList.remove('hidden');
+  gallery.classList.remove('hidden');
   showPhoto(target);
 };
 
@@ -101,6 +103,28 @@ var getId = function () {
 };
 getId();
 
+/**
+   * Закрывает окно по нажатию на ESC
+   * @param  {type} evt
+   */
+var closeGalleryHadler = function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    closeGallery();
+  }
+};
+
+var closeGallery = function () {
+  gallery.classList.add('hidden');
+  gallery.removeEventListener('keydown', closeGalleryHadler);
+};
+
+
+/**
+ * Закрывает окно по клику
+ */
+galleryClose.addEventListener('click', function () {
+  closeGallery();
+});
 
 /**
  * Загрузка изображения и показ формы редактирования
