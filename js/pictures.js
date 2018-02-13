@@ -78,10 +78,14 @@ createPhotos();
 
 var picturePreview = document.querySelectorAll('.picture');
 
+var pictureClickHandler = function (evt) {
+  if (evt.target === picturePreview) {
+    document.querySelector('.gallery-overlay').classList.remove('hidden');
+  }
+};
 
 for (var i = 0; i < picturePreview.length; i++) {
-  picturePreview[i].addEventListener('click', function () {
-  });
+  picturePreview[i].addEventListener('click', pictureClickHandler);
 }
 
 /**
@@ -90,12 +94,13 @@ for (var i = 0; i < picturePreview.length; i++) {
  */
 var showPhoto = function (photo) {
   var photoElement = document.querySelector('.gallery-overlay');
+  photoElement.querySelector('.gallery-overlay-image').setAttribute('data-id', photo.id);
   photoElement.querySelector('.gallery-overlay-image').setAttribute('src', photo.url);
   photoElement.querySelector('.likes-count').textContent = photo.likes;
   photoElement.querySelector('.comments-count').textContent = photo.comments.length;
 };
 
-showPhoto(picture[1]);
+showPhoto(picture[i]);
 
 
 /**
