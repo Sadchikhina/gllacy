@@ -223,11 +223,16 @@ changeSize();
   *
   */
 
-var picturePreview = document.querySelector('.picture');
+var showFullPic = function () {
 
-picturePreview.onclick = function (evt) {
-  var target = evt.target;
-  if (target.className === 'picture') {
-    document.querySelector('.gallery-overlay').classList.remove('.hidden');
-  }
+  var picturePreview = document.querySelector('.picture');
+
+  picturePreview.addEventListener('click', function (evt) {
+    var target = evt.target;
+    if (target.className === 'picture') {
+      document.querySelector('.gallery-overlay').classList.remove('.hidden');
+    }
+  });
 };
+
+showFullPic();
