@@ -13,7 +13,6 @@ var COMMENTS = [
 ];
 
 var picture = [];
-var picturePreview = document.querySelectorAll('a.picture');
 var gallery = document.querySelector('.gallery-overlay');
 var galleryClose = document.querySelector('.gallery-overlay-close');
 
@@ -67,34 +66,37 @@ var showPhoto = function (id) {
   photoElement.querySelector('.comments-count').textContent = picture[id].comments.length;
 };
 
+var createPhotos = function () {
+
+  /**
+   * Создает массив из 25 картинок
+   * @param {Array.<picture>}
+   */
+  var fragment = document.createDocumentFragment();
+  for (var i = 1; i < 26; i++) {
+    picture[i] = {
+      id: i,
+      url: 'photos/' + i + '.jpg',
+      likes: getRandomLikes(),
+      comments: getRandomСomments()
+    };
+    fragment.appendChild(renderPictures(picture[i]));
+  }
+  pictureListElement.appendChild(fragment);
+};
+createPhotos();
+
 var pictureClickHandler = function (evt) {
   evt.preventDefault();
   var target = evt.target.dataset.id;
   gallery.classList.remove('hidden');
+  document.addEventListener('keydown', closeGalleryHandler);
   showPhoto(target);
 };
 
 var addPictureHandlers = function () {
-  var createPhotos = function () {
 
-    /**
-     * Создает массив из 25 картинок
-     * @param {Array.<picture>}
-     */
-    var fragment = document.createDocumentFragment();
-    for (var i = 1; i < 26; i++) {
-      picture[i] = {
-        id: i,
-        url: 'photos/' + i + '.jpg',
-        likes: getRandomLikes(),
-        comments: getRandomСomments()
-      };
-      fragment.appendChild(renderPictures(picture[i]));
-    }
-    pictureListElement.appendChild(fragment);
-  };
-  createPhotos();
-
+  var picturePreview = document.querySelectorAll('a.picture');
   for (var i = 0; i < picturePreview.length; i++) {
     picturePreview[i].addEventListener('click', pictureClickHandler);
   }
@@ -105,21 +107,20 @@ addPictureHandlers();
    * Закрывает окно по нажатию на ESC
    * @param  {type} evt
    */
-var closeGalleryHadler = function (evt) {
+var closeGalleryHandler = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closeGallery();
   }
 };
 
-var closeGallery = function () {
-  gallery.classList.add('hidden');
-  gallery.removeEventListener('keydown', closeGalleryHadler);
-};
-
-
 /**
  * Закрывает окно по клику
  */
+var closeGallery = function () {
+  gallery.classList.add('hidden');
+  gallery.removeEventListener('keydown', closeGalleryHandler);
+};
+
 galleryClose.addEventListener('click', function () {
   closeGallery();
 });
@@ -140,7 +141,7 @@ var showForm = function () {
    * Закрывает окно по нажатию на ESC
    * @param  {type} evt
    */
-  var openEditorHadler = function (evt) {
+  var openEditorHandler = function (evt) {
     if (evt.keyCode === ESC_KEYCODE) {
       closeEditor();
     }
@@ -151,16 +152,15 @@ var showForm = function () {
   */
   var openEditor = function () {
     editor.classList.remove('hidden');
-    document.addEventListener('keydown', openEditorHadler);
+    document.addEventListener('keydown', openEditorHandler);
   };
-
 
   /**
    * Закрытие формы
    */
   var closeEditor = function () {
     editor.classList.add('hidden');
-    editor.removeEventListener('keydown', openEditorHadler);
+    editor.removeEventListener('keydown', openEditorHandler);
     uploadForm.reset();
   };
 
