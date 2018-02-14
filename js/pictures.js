@@ -239,29 +239,29 @@ resizeValue.value = '100';
 
 var changeSize = function () {
   decreasePicture.addEventListener('click', function () {
-    resizeValue.value = resizeValue.value - 25;
-    imagePreview.style.transform = 'scale(1 - 0.25)';
-    if (resizeValue.value > 100) {
-      resizeValue.value = '100';
-      imagePreview.style.transform = 'scale(1)';
-    } else if (resizeValue.value <= 100) {
-      resizeValue.value = '75';
+    if (resizeValue.value >= 100) {
+      resizeValue.value = resizeValue.value - 25;
       imagePreview.style.transform = 'scale(0.75)';
-    } else if (resizeValue.value <= 75) {
-      resizeValue.value = '50';
+    } else if (resizeValue.value >= 75) {
+      resizeValue.value = resizeValue.value - 25;
       imagePreview.style.transform = 'scale(0.5)';
-    } else if (resizeValue.value <= 50) {
-      resizeValue.value = '25';
-      imagePreview.style.transform = 'scale(0.25)';
-    } else if (resizeValue.value <= 25) {
-      resizeValue.value = '25';
+    } else if (resizeValue.value >= 50) {
+      resizeValue.value = resizeValue.value - 25;
       imagePreview.style.transform = 'scale(0.25)';
     }
   });
 
   increasePicture.addEventListener('click', function () {
-    resizeValue.value = '100';
-    imagePreview.style.transform = 'scale(1)';
+    if (resizeValue.value <= 25) {
+      resizeValue.value = resizeValue.value + 25;
+      imagePreview.style.transform = 'scale(0.5)';
+    } else if (resizeValue.value <= 50) {
+      resizeValue.value = resizeValue.value + 25;
+      imagePreview.style.transform = 'scale(0.75)';
+    } else if (resizeValue.value <= 75) {
+      resizeValue.value = resizeValue.value + 25;
+      imagePreview.style.transform = 'scale(1)';
+    }
   });
 
 };
