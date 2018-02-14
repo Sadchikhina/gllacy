@@ -14,7 +14,7 @@ var COMMENTS = [
 
 var picture = [];
 var gallery = document.querySelector('.gallery-overlay');
-var galleryClose = document.querySelector('.gallery-overlay-close');
+var galleryClose = gallery.querySelector('.gallery-overlay-close');
 
 /**
  * Создает рандомное количество комментариев
@@ -131,7 +131,7 @@ galleryClose.addEventListener('click', function () {
 var inputUpload = document.querySelector('#upload-file');
 var uploadForm = document.querySelector('.upload-form');
 var editor = document.querySelector('.upload-overlay');
-var editorClose = document.querySelector('.upload-form-cancel');
+var editorClose = editor.querySelector('.upload-form-cancel');
 
 var ESC_KEYCODE = 27;
 
@@ -173,6 +173,17 @@ var showForm = function () {
     closeEditor();
   });
 };
+
+/**
+ * Отправка формы
+ */
+var commentField = editor.querySelector('.upload-form-description');
+
+commentField.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    evt.stopPropagation();
+  }
+});
 
 showForm();
 

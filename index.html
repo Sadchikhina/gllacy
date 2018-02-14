@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form class="filters filters-inactive" action="index.html" method="get" autocomplete="off">
+<form class="filters filters-inactive" action=" https://js.dump.academy/kekstagram" method="post" enctype="multipart/form-data" autocomplete="off">
   <input type="radio" id="filter-recommend" class="filters-radio" name="filter" value="recommend" checked>
   <label for="filter-recommend" class="filters-item">Рекомендуемые</label>
 
@@ -93,9 +93,9 @@
           </label>
         </fieldset>
 
-        <input class="upload-form-hashtags" name="hashtags" placeholder="#хэш-тег">
+        <input class="upload-form-hashtags" name="hashtags" placeholder="#хэш-тег" pattern="#[A-Za-zА-Яа-яЁё]{1,19}" optional>
 
-        <textarea class="upload-form-description" name="description" placeholder="Ваш комментарий..."></textarea>
+        <textarea class="upload-form-description" name="description" placeholder="Ваш комментарий..." optional maxlength="140"></textarea>
 
         <button class="upload-form-cancel" type="reset" id="upload-cancel">Закрыть</button>
         <button class="upload-form-submit" type="submit" id="upload-submit">Отправить</button>
