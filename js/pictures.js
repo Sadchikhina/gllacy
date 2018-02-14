@@ -13,7 +13,7 @@ var COMMENTS = [
 ];
 
 var picture = [];
-var picturePreview = document.querySelectorAll('.picture');
+var picturePreview = document.querySelectorAll('a.picture');
 var gallery = document.querySelector('.gallery-overlay');
 var galleryClose = document.querySelector('.gallery-overlay-close');
 
@@ -55,28 +55,6 @@ var renderPictures = function (elem) {
   return pictureElement;
 };
 
-var createPhotos = function () {
-
-  /**
-   * Создает массив из 25 картинок
-   * @param {Array.<picture>}
-   */
-
-  var fragment = document.createDocumentFragment();
-  for (var i = 1; i < 26; i++) {
-    picture[i] = {
-      id: i,
-      url: 'photos/' + i + '.jpg',
-      likes: getRandomLikes(),
-      comments: getRandomСomments()
-    };
-    fragment.appendChild(renderPictures(picture[i]));
-  }
-  pictureListElement.appendChild(fragment);
-};
-
-createPhotos();
-
 /**
  * Создает DOM-элемент картинку
  * @param {Object} id
@@ -96,12 +74,32 @@ var pictureClickHandler = function (evt) {
   showPhoto(target);
 };
 
-var getId = function () {
+var addPictureHandlers = function () {
+  var createPhotos = function () {
+
+    /**
+     * Создает массив из 25 картинок
+     * @param {Array.<picture>}
+     */
+    var fragment = document.createDocumentFragment();
+    for (var i = 1; i < 26; i++) {
+      picture[i] = {
+        id: i,
+        url: 'photos/' + i + '.jpg',
+        likes: getRandomLikes(),
+        comments: getRandomСomments()
+      };
+      fragment.appendChild(renderPictures(picture[i]));
+    }
+    pictureListElement.appendChild(fragment);
+  };
+  createPhotos();
+
   for (var i = 0; i < picturePreview.length; i++) {
     picturePreview[i].addEventListener('click', pictureClickHandler);
   }
 };
-getId();
+addPictureHandlers();
 
 /**
    * Закрывает окно по нажатию на ESC
@@ -246,12 +244,18 @@ var changeSize = function () {
     if (resizeValue.value > 100) {
       resizeValue.value = '100';
       imagePreview.style.transform = 'scale(1)';
-    } else if (resizeValue.value < 100) {
+    } else if (resizeValue.value <= 100) {
       resizeValue.value = '75';
       imagePreview.style.transform = 'scale(0.75)';
-    } else if (resizeValue.value < 75) {
+    } else if (resizeValue.value <= 75) {
       resizeValue.value = '50';
       imagePreview.style.transform = 'scale(0.5)';
+    } else if (resizeValue.value <= 50) {
+      resizeValue.value = '25';
+      imagePreview.style.transform = 'scale(0.25)';
+    } else if (resizeValue.value <= 25) {
+      resizeValue.value = '25';
+      imagePreview.style.transform = 'scale(0.25)';
     }
   });
 
