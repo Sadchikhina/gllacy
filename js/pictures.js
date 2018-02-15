@@ -185,6 +185,26 @@ commentField.addEventListener('keydown', function (evt) {
   }
 });
 
+
+/**
+ * Валидация формы
+ * pattern="#[A-Za-zА-Яа-яЁё]{1,19}"
+ *
+ * userNameInput.addEventListener('invalid', function (evt) {
+  if (userNameInput.validity.tooShort) {
+    userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
+
+    var tagsField = editor.querySelector('.upload-form-hashtags');
+    var stringOfTags = '#first #second #third #forth #fifth';
+    var arrayOfTags = stringOfTags.split('#');
+
+    for (var i = 1; i < arrayOfTags.length; i++) {
+    // здесь осущетсвлять проверку тегов по условию тз 2.3
+      // trim обрезает пробелы по краям строки
+      console.log(arrayOfTags[i].trim());
+    }
+ */
+
 showForm();
 
 var sliderPin = document.querySelector('.upload-effect-level-pin');
