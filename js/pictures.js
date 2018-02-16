@@ -174,6 +174,8 @@ var showForm = function () {
   });
 };
 
+showForm();
+
 /**
  * Отправка формы
  */
@@ -185,27 +187,53 @@ commentField.addEventListener('keydown', function (evt) {
   }
 });
 
-
 /**
  * Валидация формы
- * pattern="#[A-Za-zА-Яа-яЁё]{1,19}"
- *
- * userNameInput.addEventListener('invalid', function (evt) {
-  if (userNameInput.validity.tooShort) {
-    userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
-
-    var tagsField = editor.querySelector('.upload-form-hashtags');
-    var stringOfTags = '#first #second #third #forth #fifth';
-    var arrayOfTags = stringOfTags.split('#');
-
-    for (var i = 1; i < arrayOfTags.length; i++) {
-    // здесь осущетсвлять проверку тегов по условию тз 2.3
-      // trim обрезает пробелы по краям строки
-      console.log(arrayOfTags[i].trim());
-    }
  */
+var tagsField = editor.querySelector('.upload-form-hashtags');
+var stringOfTags = [];
+var arrayOfTags = [];
+var space = ' ';
 
-showForm();
+/**
+ * Возвращает строку тегов из value инпута с тегами
+ */
+var getStringOfTags = function () {
+  for (var i = 0; i < tagsField.length; i++) {
+    stringOfTags[i] = tagsField[i].value;
+  }
+};
+
+getStringOfTags();
+
+/**
+ * Разбивает строку тегов на массив
+ * @param {arr} stringToSplit
+ * @param {type} separator
+ */
+var splitTags = function (stringToSplit, separator) {
+  arrayOfTags = stringOfTags.split(separator);
+};
+
+splitTags(stringOfTags, space);
+
+
+tagsField.addEventListener('invalid', function (evt) {
+  evt.preventDefault();
+  for (var i = 1; i < arrayOfTags.length; i++) {
+    if (tagsField.validity.tooShort) {
+      tagsField.setCustomValidity('Хештэг должен содержать хотя бы одну букву или цифру');
+    } if (tagsField.validity.tooLong) {
+      tagsField.setCustomValidity('Хештэг не должен быть длиннее 20 символов, включая #');
+    } if (i > 5) {
+      tagsField.setCustomValidity('Не более 5 хештегов');
+    } else {
+      tagsField.setCustomValidity('');
+      // trim обрезает пробелы по краям строки
+      arrayOfTags[i].trim();
+    }
+  }
+});
 
 var sliderPin = document.querySelector('.upload-effect-level-pin');
 
@@ -220,7 +248,6 @@ var marvin = effectControl.querySelector('.upload-effect-label-marvin');
 var phobos = effectControl.querySelector('.upload-effect-label-phobos');
 var heat = effectControl.querySelector('.upload-effect-label-heat');
 var original = effectControl.querySelector('#upload-effect-none');
-
 
 /**
  * Переключение фильтров
