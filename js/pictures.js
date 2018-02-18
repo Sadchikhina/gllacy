@@ -191,49 +191,74 @@ commentField.addEventListener('keydown', function (evt) {
  * Валидация формы
  */
 var tagsField = editor.querySelector('.upload-form-hashtags');
-var stringOfTags = [];
-var arrayOfTags = [];
-var space = ' ';
+var MAX_HASHTAGS = 5;
+var MAX_LENGTH_HASHTAG = 20;
+var MIN_LENGTH_HASHTAG = 2;
 
-/**
- * Возвращает строку тегов из value инпута с тегами
- */
-var getStringOfTags = function () {
-  for (var i = 0; i < tagsField.length; i++) {
-    stringOfTags[i] = tagsField[i].value;
-  }
-};
+var validateForm = function () {
 
-getStringOfTags();
+  var tagsHandler = function (stringOfTags) {
+    var errorMessage = '';
 
-/**
- * Разбивает строку тегов на массив
- * @param {arr} stringToSplit
- * @param {type} separator
- */
-var splitTags = function (stringToSplit, separator) {
-  arrayOfTags = stringOfTags.split(separator);
-};
+    stringOfTags = stringOfTags.trim();
+    stringOfTags = stringOfTags.toLowerCase();
 
-splitTags(stringOfTags, space);
+    var hashtags = stringOfTags.split('');
 
+    hashtags = hashtags.filter(function (item) {
+      return item !== '';
+    });
 
-tagsField.addEventListener('invalid', function (evt) {
-  evt.preventDefault();
-  for (var i = 1; i < arrayOfTags.length; i++) {
-    if (tagsField.validity.tooShort) {
-      tagsField.setCustomValidity('Хештэг должен содержать хотя бы одну букву или цифру');
-    } if (tagsField.validity.tooLong) {
-      tagsField.setCustomValidity('Хештэг не должен быть длиннее 20 символов, включая #');
-    } if (i > 5) {
-      tagsField.setCustomValidity('Не более 5 хештегов');
+    if (hashtags.length > MAX_HASHTAGS) {
+      errorMessage += 'Не больше 5 хэш-тегов.';
+    }
+
+    hashtags.forEach(function (item) {
+      if (item.length > MAX_LENGTH_HASHTAG) {
+        errorMessage += 'Длина хэш-тега не больше 20 символов.';
+      }
+
+      if (item[0] !== '#') {
+        errorMessage += 'Хэш-тег должен начинаться с символа "#".';
+      }
+
+      if (item.length < MIN_LENGTH_HASHTAG) {
+        errorMessage +=
+          'После символа "#" минимум 1 знак.';
+      }
+
+      if (~item.indexOf('#', 1)) {
+        errorMessage += 'Хэш-теги отделяются пробелом.';
+      }
+    });
+
+    var isDuplicate = function (item, i, array) {
+      return ~array.indexOf(item, i + 1);
+    };
+
+    if (hashtags.some(isDuplicate)) {
+      errorMessage += 'Запрещены повторяющие хэш-теги.';
+    }
+
+    if (errorMessage) {
+      tagsField.setCustomValidity(errorMessage);
     } else {
       tagsField.setCustomValidity('');
-      // trim обрезает пробелы по краям строки
-      arrayOfTags[i].trim();
+      tagsField.style.border = '';
     }
-  }
-});
+  };
+
+  tagsField.addEventListener('input', function (evt) {
+    tagsHandler(evt.target.value);
+  });
+
+  uploadForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+  });
+
+};
+
+validateForm();
 
 var sliderPin = document.querySelector('.upload-effect-level-pin');
 
