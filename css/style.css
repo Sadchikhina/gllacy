@@ -502,7 +502,6 @@ body {
   height: 21px;
   bottom: 63px;
   cursor: pointer;
-
 }
 
 .slider-pagination-dot {
@@ -956,10 +955,10 @@ input[name="sub-email"] {
   background-color: #f8f7f4;
   padding: 0;
   margin: 0;
-
   padding-bottom: 27px;
   padding-left: 24px;
   z-index: 2;
+  visibility: hidden;
 }
 
 .modal-window-header {
