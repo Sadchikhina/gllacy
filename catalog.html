@@ -13,22 +13,44 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-        <a class="index-header-logo" href="index.html" aria-label="На главную"><img src="img/logo.svg" alt="Логотип" width="154px" height="64px"></a>
+        <img class="main-navigation-logo" src="img/logo.svg" alt="Логотип" width="154px" height="64px">
         <ul class="cite-navigation">
-          <li>Каталог</li>
+          <li class="menu-catalog"><a href="catalog.html">Каталог</a>
+            <ul class="catalog-list">
+              <li class="new-items"><a href="#"><b>Новинки</b></a></li>
+              <li class="cream-items"><a href="#">Сливочное</a></li>
+              <li class="sherbet-items active"><a class="active-link" href="#">Щербеты</a></li>
+              <li class="fruitice-items"><a href="#">Фруктовый лёд</a></li>
+              <li class="melorin-items"><a href="#">Мелорин</a></li>
+            </ul>
+          </li>
           <li>Доставка и оплата</li>
-          <li>О компании</li>
+          <li>О Компании</li>
         </ul>
         <ul class="user-navigation">
-          <li>Поиск</li>
-          <li>Вход</li>
-          <li>Пусто</li>
+          <li class="search">
+            <form class="search-form" action="#" method="post">
+              <input class="search-field" type="text" name="search" placeholder="Что ищем?">
+            </form>
+          </li>
+          <li class="enter">Вход
+            <form class="enter-form" action="#" method="get">
+              <div class="full-width">
+                <input class="email-field" type="email" name="enter-email" placeholder="Электронная почта">
+                <input class="password-field" type="password" name="enter-password" placeholder="Пароль">
+              </div>
+              <div class="half-width">
+                <button class="enter-button" aria-label="Вход">Войти</button>
+                <div class="help">
+                  <a href="#">Забыли пароль?</a>
+                  <a href="#">Новая регистрация</a>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li class="cart">Пусто</li>
         </ul>
       </nav>
-      <div class="time-contact">
-        <span class="work-hours" aria-label="Время работы">С 10 до 20, ежедневно</span>
-        <span class="telephone" aria-label="Телефон">8 812 450-25-25</span>
-      </div>
     </header>
     <main class="catalog-main">
       <header class="catalog-main-header">
@@ -37,6 +59,10 @@
           <li><a class="to-catalog" href="catalog.html">Каталог</a></li>
           <li class="current">Сливочное</li>
         </ul>
+        <div class="catalog-time-contact">
+          <span class="catalog-work-hours" aria-label="Время работы">С 10 до 20, ежедневно</span>
+          <span class="catalog-telephone" aria-label="Телефон">8 812 450-25-25</span>
+        </div>
       </header>
       <h1>Сливочное мороженое</h1>
       <section class="filters">
@@ -170,21 +196,27 @@
       </div>
     </main>
     <footer class="index-footer">
-      <ul class="social-list">
-        <li class="social-twitter"></li>
-        <li class="social-instagram"></li>
-        <li class="social-facebook"></li>
-        <li class="social-vk"></li>
-      </ul>
-      <div class="info">
-        <p>Для поставщиков</p>
-        <p>Наши документы</p>
-        <p>О производстве</p>
-        <p>Экогологические стандарты</p>
-      </div>
-      <div class="copyright">
-        <img src="img/logo-htmlacademy.svg" alt="логотип htmlacademy" width="108px" height="39px">
-        <p>Сделано в HTML academy 2017</p>
+      <div class="footer-flex-wrapper">
+          <section class="social-list">
+            <a class="social twitter" href="https://twitter.com/" target="_blank" aria-label="Твиттер"></a>
+            <a class="social instagram" href="https://www.instagram.com/" target="_blank" aria-label="Инстаграм"></a>
+            <a class="social facebook" href="https://facebook.com/" target="_blank" aria-label="Фейсбук"></a>
+            <a class="social vk" href="https://vk.com/" target="_blank" aria-label="Вконтакте"></a>
+          </section>
+          <div class="info">
+            <div class="left-column-info">
+              <a class="providers" href="#">Для поставщиков</a>
+              <a class="production" href="#">О производстве</a>
+            </div>
+            <div class="right-column-info">
+              <a class="documents" href="#">Наши документы</a>
+              <a class="standarts" href="#">Экогологические стандарты</a>
+            </div>
+          </div>
+          <div class="copyright">
+            <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" aria-label="Интенсив htmlacademy"><img class="htmlacademy-logo" src="img/logo-htmlacademy.svg" alt="логотип htmlacademy" width="108px" height="39px"></a>
+            <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank" aria-label="Интенсив htmlacademy">HTML academy</a> 2017</p>
+          </div>
       </div>
     </footer>
   </body>

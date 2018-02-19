@@ -127,6 +127,15 @@ body {
   display: block;
 }
 
+.menu-catalog a {
+  color: #ffffff;
+}
+
+.menu-catalog a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
 .catalog-list {
   box-sizing: border-box;
   position: absolute;
@@ -828,21 +837,83 @@ input[name="sub-email"] {
   line-height: 24px;
 }
 
+/**
+ * Стилизуем каталог
+ */
+.catalog-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-main-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .breadscrumbs-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  width: 220px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
+  padding: 0;
+  margin: 0;
 }
 
-.breadscrumbs-menu a,
-.paginator a {
-  text-decoration: none;
+.breadscrumbs-menu a {
   color: #ffffff;
+}
+
+.to-main::after {
+  content: "»";
+  position: absolute;
+  bottom: 2px;
+  left: 60px;
+  font-size: 18px;
+}
+
+.to-catalog::after {
+  content: "»";
+  position: absolute;
+  bottom: 2px;
+  left: 135px;
+  font-size: 18px;
+}
+
+.catalog-time-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.catalog-work-hours {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+
+.catalog-telephone {
+  font-size: 22px;
+  line-height: 24px;
 }
 
 .catalog-main h1 {
   font-size: 35px;
   line-height: 41px;
+}
+
+.filters {
+  width: 860px;
+  height: 130px;
+  margin-bottom: 140px;
+}
+
+.filter {
+  display: flex;
+
 }
 
 .filter-label {
@@ -857,8 +928,14 @@ input[name="sub-email"] {
 }
 
 .filter-button {
+  width: 140px;
+  height: 37px;
   line-height: 18px;
   font-weight: 500;
+}
+
+.catalog {
+  display: flex;
 }
 
 .paginator {
@@ -866,6 +943,14 @@ input[name="sub-email"] {
   font-weight: 500;
 }
 
+.paginator a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/**
+ * Стилизуем футер
+ */
 .index-footer {
   font-size: 14px;
   font-weight: 400;
