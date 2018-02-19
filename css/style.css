@@ -958,7 +958,11 @@ input[name="sub-email"] {
   padding-bottom: 27px;
   padding-left: 24px;
   z-index: 2;
-  visibility: hidden;
+  display: none;
+}
+
+.modal-show {
+  display: flex;
 }
 
 .modal-window-header {
