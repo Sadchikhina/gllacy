@@ -20,6 +20,7 @@ body {
 .slider,
 .index-main,
 .catalog-main,
+.catalog,
 .footer-flex-wrapper {
   width: 1146px;
   margin-left: auto;
@@ -605,10 +606,10 @@ body {
 }
 
 .hit-item {
+  position: relative;
   padding: 0;
   margin: 0;
   width: 267px;
-  position: relative;
 }
 
 .hit-item::before {
@@ -636,8 +637,7 @@ body {
     margin-top: 27px;
 }
 
-.hit-item-text b,
-.catalog-item b {
+.hit-item-text b {
   font-size: 45px;
   text-shadow: 1px 1px 1px #323232;
 }
@@ -652,8 +652,7 @@ body {
   font-size: 32px;
 }
 
-.hit-item-text p,
-.catalog-item p {
+.hit-item-text p {
   font-weight: 500;
 }
 
@@ -913,7 +912,7 @@ input[name="sub-email"] {
 
 .filter {
   display: flex;
-
+  outline: 1px solid #fff;
 }
 
 .filter-label {
@@ -936,6 +935,33 @@ input[name="sub-email"] {
 
 .catalog {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.catalog-item {
+  position: relative;
+  width: 267px;
+  height: 322px;
+}
+
+.catalog-item-pic {
+  position: absolute;
+}
+
+.catalog-item-text {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.catalog-item-text p {
+  font-weight: 500;
+}
+
+.catalog-item-text b {
+  font-size: 45px;
+  text-shadow: 1px 1px 1px #323232;
 }
 
 .paginator {
