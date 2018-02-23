@@ -1147,7 +1147,6 @@ input[name="fatness-sort"]:checked + label::before {
   width: 267px;
   height: 322px;
   margin-bottom: 40px;
-  outline: 1px solid #fff;
 }
 
 .catalog-item-pic {
@@ -1156,20 +1155,26 @@ input[name="fatness-sort"]:checked + label::before {
 
 .catalog-item-text {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 267px;
+  height: 105px;
   z-index: 1;
   margin-top: 220px;
-  outline: 1px solid #fff;
 }
 
 .catalog-item-text b {
   font-size: 45px;
   text-shadow: 1px 1px 1px #323232;
+  margin-bottom: 20px;
 }
 
 .catalog-item-text p {
   text-align: center;
   font-weight: 500;
   align-self: center;
+  margin: 0;
 }
 
 .paginator {
