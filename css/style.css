@@ -920,6 +920,10 @@ input[name="sub-email"] {
   margin-bottom: 25px;
 }
 
+
+/**
+ * Стилизуем фильтры
+ */
 .filters {
   margin-bottom: 20px;
 }
@@ -930,7 +934,6 @@ input[name="sub-email"] {
   height: 150px;
   flex-wrap: wrap;
   justify-content: space-between;
-  outline: 1px solid #fff;
 }
 
 .filter-label {
@@ -962,6 +965,11 @@ input[name="fatness-sort"],
   display: none;
 }
 
+input[name="fatness-sort"] + label,
+.fillers input[type="checkbox"] + label {
+  position: relative;
+}
+
 input[name="popularity-sort"] + label {
   box-sizing: border-box;
   position: relative;
@@ -971,6 +979,7 @@ input[name="popularity-sort"] + label {
   background-color: rgba(255, 255, 255, 0.2);
   padding-top: 8px;
   padding-left: 15px;
+  cursor: pointer;
 }
 
 input[name="popularity-sort"] + label::after {
@@ -986,28 +995,124 @@ input[name="popularity-sort"] + label::after {
 
 .price-slider {
   box-sizing: border-box;
+  position: relative;
   width: 220px;
   height: 37px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.range-line {
+  position: absolute;
+  top: 17px;
+  left: 22px;
+  width: 176px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.range-selected {
+  position: absolute;
+  top: 17px;
+  left: 50px;
+  width: 100px;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.left-handle,
+.right-handle {
+  position: absolute;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  background-color: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.left-handle {
+  left: 35px;
+}
+
+.right-handle {
+  left: 133px;
+}
+
 .fatness-wrapper {
   box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 415px;
   height: 37px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.2);
+  padding-left: 48px;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+
+input[name="fatness-sort"] + label::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: -30px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+input[name="fatness-sort"]:checked + label::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: -30px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/radio-on.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .fillers-wrapper {
   box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 703px;
   height: 37px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.2);
+  padding-left: 46px;
+  padding-right: 18px;
+}
+
+.fillers input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -33px;
+  width: 23px;
+  height: 23px;
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.fillers input[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -33px;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/checkbox-on.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .button-wrapper label {
@@ -1024,9 +1129,14 @@ input[name="popularity-sort"] + label::after {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #ffffff;
   border-radius: 50px;
+  outline: none;
   cursor: pointer;
 }
 
+
+/**
+ * Стилизуем каталог
+ */
 .catalog {
   display: flex;
   flex-wrap: wrap;
