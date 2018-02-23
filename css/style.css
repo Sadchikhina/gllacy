@@ -925,7 +925,7 @@ input[name="sub-email"] {
  * Стилизуем фильтры
  */
 .filters {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .filter {
@@ -1133,7 +1133,6 @@ input[name="fatness-sort"]:checked + label::before {
   cursor: pointer;
 }
 
-
 /**
  * Стилизуем каталог
  */
@@ -1147,6 +1146,8 @@ input[name="fatness-sort"]:checked + label::before {
   position: relative;
   width: 267px;
   height: 322px;
+  margin-bottom: 40px;
+  outline: 1px solid #fff;
 }
 
 .catalog-item-pic {
@@ -1155,17 +1156,20 @@ input[name="fatness-sort"]:checked + label::before {
 
 .catalog-item-text {
   position: absolute;
-  text-align: center;
   z-index: 1;
-}
-
-.catalog-item-text p {
-  font-weight: 500;
+  margin-top: 220px;
+  outline: 1px solid #fff;
 }
 
 .catalog-item-text b {
   font-size: 45px;
   text-shadow: 1px 1px 1px #323232;
+}
+
+.catalog-item-text p {
+  text-align: center;
+  font-weight: 500;
+  align-self: center;
 }
 
 .paginator {
