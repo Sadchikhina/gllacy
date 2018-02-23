@@ -15,7 +15,7 @@
       <nav class="main-navigation">
         <img class="main-navigation-logo" src="img/logo.svg" alt="Логотип" width="154px" height="64px">
         <ul class="cite-navigation">
-          <li class="menu-catalog"><a href="catalog.html">Каталог</a>
+          <li class="menu-catalog on-catalog"><a href="catalog.html">Каталог</a>
             <ul class="catalog-list">
               <li class="new-items"><a href="#"><b>Новинки</b></a></li>
               <li class="cream-items"><a href="#">Сливочное</a></li>
@@ -24,8 +24,8 @@
               <li class="melorin-items"><a href="#">Мелорин</a></li>
             </ul>
           </li>
-          <li>Доставка и оплата</li>
-          <li>О Компании</li>
+          <li class="delivery">Доставка и оплата</li>
+          <li class="about-company">О Компании</li>
         </ul>
         <ul class="user-navigation">
           <li class="search">
@@ -73,54 +73,63 @@
             <label for="popularity">по популярности</label>
           </div>
           <div class="price">
-            <label class="filter-label">Цена: 100 р. - 500 р.</label>
-            <div class="range-line" tabindex="0"></div>
-            <div class="left-handle" tabindex="0"></div>
-            <div class="right-handle" tabindex="0"></div>
+            <label class="filter-label">Цена: 100 руб. - 500 руб.</label>
+            <div class="price-slider">
+              <div class="range-line"></div>
+              <div class="left-handle" tabindex="0"></div>
+              <div class="right-handle" tabindex="0"></div>
+            </div>
           </div>
           <div class="fatness">
             <label class="filter-label">Жирность:</label>
-            <p>
-              <input type="radio" name="fatness-sort" id="zero-fat" value="0%">
-              <label for="zero-fat">0%</label>
-            </p>
-            <p>
-              <input type="radio" name="fatness-sort" id="ten-fat" value="10%" checked>
-              <label for="zero-fat">10%</label>
-            </p>
-            <p>
-              <input type="radio" name="fatness-sort" id="under-thirty-fat" value="до 30%">
-              <label for="zero-fat">до 30%</label>
-            </p>
-            <p>
-              <input type="radio" name="fatness-sort" id="above-thirty-fat" value="выше 30%">
-              <label for="zero-fat">выше 30%</label>
-            </p>
+            <div class="fatness-wrapper">
+              <p>
+                <input type="radio" name="fatness-sort" id="zero-fat" value="0%">
+                <label for="zero-fat">0%</label>
+              </p>
+              <p>
+                <input type="radio" name="fatness-sort" id="ten-fat" value="10%" checked>
+                <label for="zero-fat">10%</label>
+              </p>
+              <p>
+                <input type="radio" name="fatness-sort" id="under-thirty-fat" value="до 30%">
+                <label for="zero-fat">до 30%</label>
+              </p>
+              <p>
+                <input type="radio" name="fatness-sort" id="above-thirty-fat" value="выше 30%">
+                <label for="zero-fat">выше 30%</label>
+              </p>
+            </div>
           </div>
           <div class="fillers">
             <label class="filter-label">Наполнители:</label>
-            <p>
-              <input type="checkbox" name="chocolate-fill" id="chocolate" checked>
-              <label for="chocolate">шоколадные</label>
-            </p>
-            <p>
-              <input type="checkbox" name="sugar-fill" id="sugar" checked>
-              <label for="sugar">сахарные присыпки</label>
-            </p>
-            <p>
-              <input type="checkbox" name="fruit-fill" id="fruit">
-              <label for="fruit">фрукты</label>
-            </p>
-            <p>
-              <input type="checkbox" name="syrop-fill" id="syrop">
-              <label for="syrop">сиропы</label>
-            </p>
-            <p>
-              <input type="checkbox" name="jam-fill" id="jam">
-              <label for="jam">джемы</label>
-            </p>
+            <div class="fillers-wrapper">
+              <p>
+                <input type="checkbox" name="chocolate-fill" id="chocolate" checked>
+                <label for="chocolate">шоколадные</label>
+              </p>
+              <p>
+                <input type="checkbox" name="sugar-fill" id="sugar" checked>
+                <label for="sugar">сахарные присыпки</label>
+              </p>
+              <p>
+                <input type="checkbox" name="fruit-fill" id="fruit">
+                <label for="fruit">фрукты</label>
+              </p>
+              <p>
+                <input type="checkbox" name="syrop-fill" id="syrop">
+                <label for="syrop">сиропы</label>
+              </p>
+              <p>
+                <input type="checkbox" name="jam-fill" id="jam">
+                <label for="jam">джемы</label>
+              </p>
+            </div>
           </div>
-          <button class="filter-button" type="submit" name="apply">Применить</button>
+          <div class="button-wrapper">
+            <label class="filter-label">a</label>
+            <button class="filter-button" type="submit" name="apply">Применить</button>
+          </div>
         </form>
       </section>
       <section class="catalog">
@@ -206,7 +215,7 @@
           <div class="catalog-item-text">
             <b>420<span class="ruble">&#8381;</span><span class="kilo">/кг</span></b>
             <p>Сливочное с мятным сиропом</p>
-          </div> 
+          </div>
         </div>
       </section>
       <div class="paginator">
