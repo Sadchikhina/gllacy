@@ -71,6 +71,26 @@ body {
   box-shadow: inset 0 2px 2px 0 #952718;
 }
 
+input[name="sub-email"]:hover,
+.search-field:hover,
+.email-field:hover,
+.password-field:hover,
+.name-field:hover,
+.modal-email-field:hover,
+.comment-field:hover {
+  border: 2px solid #c7c6c5;
+}
+
+input[name="sub-email"]:focus,
+.search-field:focus,
+.email-field:focus,
+.password-field:focus,
+.name-field:focus,
+.modal-email-field:focus,
+.comment-field:focus {
+  border: 2px solid #8fbdec;
+}
+
 .main-navigation {
   display: flex;
   margin-top: 10px;
@@ -827,6 +847,7 @@ input[name="sub-email"] {
   border-radius: 7px;
   padding-left: 10px;
   margin-right: 7px;
+  outline: none;
 }
 
 .send-button {
@@ -840,11 +861,18 @@ input[name="sub-email"] {
 }
 
 /**
- * Стилизуем каталог
+ * Стилизуем страницу каталога
  */
+
+ .index-link {
+   margin-bottom: -6px;
+   padding: 0;
+ }
+
 .catalog-main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 14px;
 }
 
 .catalog-main-header {
@@ -993,6 +1021,21 @@ input[name="popularity-sort"] + label::after {
   right: 15px;
 }
 
+input[name="popularity-sort"]:hover + label  {
+  color: #000000;
+}
+
+input[name="popularity-sort"]:hover + label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url("../img/select-arrow-black.svg");
+  background-repeat: no-repeat;
+  top: 14px;
+  right: 15px;
+}
+
 .price-slider {
   box-sizing: border-box;
   position: relative;
@@ -1133,13 +1176,25 @@ input[name="fatness-sort"]:checked + label::before {
   cursor: pointer;
 }
 
+.filter-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.filter-button:active {
+  background-color: #eaeaea;
+  box-shadow: inset 0 2px 2px 0 #6a6b6a;
+  border: none;
+}
+
 /**
- * Стилизуем каталог
+ * Стилизуем каталог (блок с мороженками)
  */
 .catalog {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 43px;
 }
 
 .catalog-item {
@@ -1157,7 +1212,6 @@ input[name="fatness-sort"]:checked + label::before {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 267px;
   height: 105px;
   z-index: 1;
@@ -1167,25 +1221,68 @@ input[name="fatness-sort"]:checked + label::before {
 .catalog-item-text b {
   font-size: 45px;
   text-shadow: 1px 1px 1px #323232;
-  margin-bottom: 20px;
+  margin-bottom: 39px;
 }
 
 .catalog-item-text p {
   text-align: center;
   font-weight: 500;
-  align-self: center;
   margin: 0;
+  text-decoration: underline;
 }
 
 .paginator {
+  display: flex;
+  justify-content: space-between;
+  width: 188px;
   line-height: 18px;
   font-weight: 500;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.page-previous {
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  margin-top: 6px;
+  width: 8px;
+  height: 12px;
+  transform: rotateY(180deg);
+}
+
+.page-next {
+  background-image: url("../img/icon-right-small-active.svg");
+  background-repeat: no-repeat;
+  margin-top: 6px;
+  width: 8px;
+  height: 12px;
 }
 
 .paginator a {
   text-decoration: none;
   color: #ffffff;
 }
+
+.page {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+}
+
+.paginator .active {
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.page:hover:not(.active) {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 
 /**
  * Стилизуем футер
@@ -1320,6 +1417,7 @@ input[name="fatness-sort"]:checked + label::before {
   border-radius: 5px;
   border: 1px solid #d3d3d2;
   padding-left: 14px;
+  outline: none;
 }
 
 .comment-field {
@@ -1330,6 +1428,7 @@ input[name="fatness-sort"]:checked + label::before {
   border: 1px solid #d3d3d2;
   padding-top: 13px;
   padding-left: 14px;
+  outline: none;
 }
 
 .modal-window-button {
@@ -1359,13 +1458,22 @@ input[name="fatness-sort"]:checked + label::before {
 .social {
   width: 32px;
   height: 32px;
-  border: 2px solid #c2cec7;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   margin-right: 12px;
 }
 
+.social:active {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
 .twitter {
   background-image: url("../img/twitter.svg");
+  background-repeat: no-repeat;
+}
+
+.twitter:hover {
+  background-image: url("../img/twitter-hover.svg");
   background-repeat: no-repeat;
 }
 
@@ -1374,13 +1482,28 @@ input[name="fatness-sort"]:checked + label::before {
   background-repeat: no-repeat;
 }
 
+.instagram:hover {
+  background-image: url("../img/instagram-hover.svg");
+  background-repeat: no-repeat;
+}
+
 .facebook {
   background-image: url("../img/fb.svg");
   background-repeat: no-repeat;
 }
 
+.facebook:hover {
+  background-image: url("../img/fb-hover.svg");
+  background-repeat: no-repeat;
+}
+
 .vk {
   background-image: url("../img/vk.svg");
+  background-repeat: no-repeat;
+}
+
+.vk:hover {
+  background-image: url("../img/vk-hover.svg");
   background-repeat: no-repeat;
 }
 
