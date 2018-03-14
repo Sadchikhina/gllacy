@@ -40,7 +40,8 @@ body {
 .send-button,
 .feedback-button,
 .enter-button,
-.modal-window-button {
+.modal-window-button,
+.quick-show-button {
   background: linear-gradient(to bottom, #f16743, #e84c36);
   text-shadow: 0 2px 2px #c63d24;
   box-shadow: 0 2px 2px 0 #ab5948;
@@ -55,7 +56,8 @@ body {
 .send-button:hover,
 .feedback-button:hover,
 .enter-button:hover,
-.modal-window-button:hover {
+.modal-window-button:hover,
+.quick-show-button:hover {
   background: linear-gradient(to bottom, #f58669, #ec6f5e);
   box-shadow: 0 2px 2px 0 #ac1000;
   text-shadow: 0 2px 2px #d95f49;
@@ -66,7 +68,8 @@ body {
 .send-button:active,
 .feedback-button:active,
 .enter-button:active,
-.modal-window-button:active {
+.modal-window-button:active,
+.quick-show-button:active {
   background: linear-gradient(to bottom, #e84c36, #f16743);
   box-shadow: inset 0 2px 2px 0 #952718;
 }
@@ -404,7 +407,7 @@ input[name="sub-email"]:focus,
   padding-left: 44px;
 }
 
-.cart::before {
+.empty::before {
   content: "";
   position: absolute;
   width: 21px;
@@ -414,8 +417,18 @@ input[name="sub-email"]:focus,
   left: 16px;
 }
 
-.cart:hover::before {
+.empty:hover::before {
   background: url("../img/basket-black.svg") no-repeat;
+}
+
+.full::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 20px;
+  background: url("../img/basket-red.svg") no-repeat;
+  top: 6px;
+  left: 16px;
 }
 
 .slider {
@@ -1202,6 +1215,35 @@ input[name="fatness-sort"]:checked + label::before {
   width: 267px;
   height: 322px;
   margin-bottom: 40px;
+}
+
+.catalog-item:hover .catalog-item-hover {
+  display: block;
+}
+
+.catalog-item-hover {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 267px;
+  height: 405px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 15px 40px 0 #5c6e64;
+  z-index: 1;
+  display: none;
+}
+
+.quick-show-button {
+  position: absolute;
+  width: 200px;
+  height: 45px;
+  bottom: 20px;
+  left: 45px;
+  border-radius: 50px;
 }
 
 .catalog-item-pic {
